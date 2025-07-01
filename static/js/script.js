@@ -1,25 +1,29 @@
+// static/js/script.js
+
 document.addEventListener('DOMContentLoaded', () => {
-    // --- DOM Element References & Utility ---
     // Centralized function to get elements by ID for conciseness
     const getById = (id) => document.getElementById(id);
 
-    // Main UI elements
+    // Grouping all UI elements for easier access
     const ui = {
         createCatalogBtn: getById('createCatalogBtn'),
         viewAllCatalogsBtn: getById('viewAllCatalogsBtn'),
         updateByIdBtn: getById('updateByIdBtn'),
         deleteByIdBtn: getById('deleteByIdBtn'),
         viewByIdBtn: getById('viewByIdBtn'),
+
         catalogModal: getById('catalogModal'),
         closeModalBtn: getById('closeModalBtn'),
         catalogForm: getById('catalogForm'),
         submitCatalogBtn: getById('submitCatalogBtn'),
         catalogTableBody: getById('catalogTableBody'),
+
         confirmModal: getById('confirmModal'),
         closeConfirmModalBtn: getById('closeConfirmModalBtn'),
         confirmDeleteBtn: getById('confirmDeleteBtn'),
         cancelDeleteBtn: getById('cancelDeleteBtn'),
         confirmMessage: getById('confirmMessage'),
+
         inputByIdModal: getById('inputByIdModal'),
         closeInputByIdModalBtn: getById('closeInputByIdModalBtn'),
         inputByIdForm: getById('inputByIdForm'),
@@ -27,10 +31,18 @@ document.addEventListener('DOMContentLoaded', () => {
         inputCatalogId: getById('inputCatalogId'),
         inputByIdError: getById('inputByIdError'),
         actionByIdSubmitBtn: getById('actionByIdSubmitBtn'),
+
         noCatalogsMessage: getById('noCatalogsMessage'),
         messageContainer: getById('message-container'),
         loadingSpinner: getById('loadingSpinner'),
-        // Form specific error spans
+
+        // Form fields and their error spans
+        catalogId: getById('catalogId'),
+        catalogName: getById('catalogName'),
+        catalogDescription: getById('catalogDescription'),
+        startDate: getById('startDate'),
+        endDate: getById('endDate'),
+        status: getById('status'),
         catalogNameError: getById('catalogNameError'),
         catalogDescriptionError: getById('catalogDescriptionError'),
         startDateError: getById('startDateError'),
@@ -38,25 +50,21 @@ document.addEventListener('DOMContentLoaded', () => {
         statusError: getById('statusError')
     };
 
-    // --- State Variables ---
     let currentDeleteCatalogId = null;
-    let currentActionType = null; // 'update', 'delete', 'view'
+    let currentActionType = null;
 
-    // --- UI Feedback & Modal Management ---
+    // --- UI Utility Functions ---
 
-    /** Shows a modal by adding the 'show' class. */
     const showModal = (modalElement) => {
         modalElement.classList.add('show');
         modalElement.setAttribute('aria-hidden', 'false');
     };
 
-    /** Hides a modal by removing the 'show' class. */
     const hideModal = (modalElement) => {
         modalElement.classList.remove('show');
         modalElement.setAttribute('aria-hidden', 'true');
     };
 
-    /** Resets the main catalog form to its initial state. */
     const resetCatalogForm = () => {
         ui.catalogForm.reset();
         ui.catalogId.value = '';
@@ -65,60 +73,50 @@ document.addEventListener('DOMContentLoaded', () => {
         clearFormErrorMessages();
     };
 
-    /** Clears all validation error messages within the forms. */
     const clearFormErrorMessages = () => {
         document.querySelectorAll('.error-text').forEach(el => el.textContent = '');
         ui.inputByIdError.textContent = '';
     };
 
-    /** Displays a temporary success or error message to the user. */
     const showMessage = (message, type = 'success') => {
         const alertDiv = document.createElement('div');
         alertDiv.className = `alert alert-${type}`;
         alertDiv.textContent = message;
-        ui.messageContainer.innerHTML = ''; // Clear previous messages
+        ui.messageContainer.innerHTML = '';
         ui.messageContainer.appendChild(alertDiv);
-        // Optional: Auto-hide message after a few seconds
-        setTimeout(() => alertDiv.remove(), 5000);
+        setTimeout(() => alertDiv.remove(), 5000); // Auto-hide after 5 seconds
     };
 
-    /** Shows the loading spinner. */
     const showSpinner = () => ui.loadingSpinner.classList.add('show');
-
-    /** Hides the loading spinner. */
     const hideSpinner = () => ui.loadingSpinner.classList.remove('show');
 
-    // --- API Interaction Layer ---
+    // --- API Interaction ---
 
-    /** Handles API requests with integrated loading and error feedback. */
     const apiRequest = async (url, options = {}) => {
         showSpinner();
         try {
             const response = await fetch(url, options);
             const data = await response.json();
             if (!response.ok) {
-                const errorMessage = data.error || 'An unknown error occurred.';
-                throw new Error(data.details || errorMessage); // Use details if available
+                throw new Error(data.details || data.error || 'An unknown error occurred.');
             }
             return data;
         } catch (error) {
-            console.error('API Request Error:', error);
-            // Show user-friendly network error or specific API error
+            console.error('API Request Error:', error); // Keep for deeper debugging
             showMessage(error.message || 'Network error: Could not connect to the server.', 'error');
-            throw error; // Re-throw to allow specific error handling at call site
+            throw error;
         } finally {
             hideSpinner();
         }
     };
 
-    /** Fetches and displays all catalogs, with optional search. */
     const fetchAndDisplayAllCatalogs = async (searchTerm = '') => {
         try {
             const url = searchTerm ? `/api/catalogs?search=${encodeURIComponent(searchTerm)}` : '/api/catalogs';
             const result = await apiRequest(url);
-            const catalogs = result.data || []; // Access 'data' field
+            const catalogs = result.data || [];
 
-            ui.catalogTableBody.innerHTML = ''; // Clear table
+            ui.catalogTableBody.innerHTML = '';
 
             if (catalogs.length > 0) {
                 ui.noCatalogsMessage.style.display = 'none';
@@ -142,16 +140,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 ui.noCatalogsMessage.style.display = 'block';
             }
         } catch (error) {
-            // Error already shown by apiRequest, just update UI state if needed
             ui.noCatalogsMessage.style.display = 'block';
         }
     };
 
-    /** Fetches a single catalog by ID and populates the form for editing. */
     const fetchCatalogForEdit = async (catalogId) => {
         try {
             const result = await apiRequest(`/api/catalogs/${catalogId}`);
-            const catalog = result.data; // Access 'data' field
+            const catalog = result.data;
             if (catalog) {
                 ui.catalogId.value = catalog.catalog_id;
                 ui.catalogName.value = catalog.catalog_name;
@@ -170,18 +166,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 hideModal(ui.inputByIdModal);
             }
         } catch (error) {
-            // Error already shown by apiRequest
             hideModal(ui.inputByIdModal);
         }
     };
 
-    /** Fetches a single catalog by ID and displays it in the table (clearing others). */
     const fetchCatalogAndDisplayOne = async (catalogId) => {
         try {
             const result = await apiRequest(`/api/catalogs/${catalogId}`);
-            const catalog = result.data; // Access 'data' field
+            const catalog = result.data;
             
-            ui.catalogTableBody.innerHTML = ''; // Clear table
+            ui.catalogTableBody.innerHTML = '';
 
             if (catalog) {
                 ui.noCatalogsMessage.style.display = 'none';
@@ -206,13 +200,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             hideModal(ui.inputByIdModal);
         } catch (error) {
-            // Error already shown by apiRequest
             ui.noCatalogsMessage.style.display = 'block';
             hideModal(ui.inputByIdModal);
         }
     };
 
-    /** Saves (creates or updates) a catalog via API. */
     const saveCatalog = async (catalogData, catalogId = null) => {
         const method = catalogId ? 'PUT' : 'POST';
         const url = catalogId ? `/api/catalogs/${catalogId}` : '/api/catalogs';
@@ -226,41 +218,37 @@ document.addEventListener('DOMContentLoaded', () => {
             showMessage(result.message, 'success');
             hideModal(ui.catalogModal);
             resetCatalogForm();
-            fetchAndDisplayAllCatalogs(); // Refresh table
+            fetchAndDisplayAllCatalogs();
         } catch (error) {
-            // Specific validation errors already handled by Flask & apiRequest, just update form errors
+            // Map specific validation errors from Flask's 'details' to UI error spans
             if (error.message) {
-                // This assumes `error.message` will contain the detailed validation string from Flask
-                // We'll parse it to assign to correct fields
                 const errorMessage = error.message;
                 if (errorMessage.includes("Name")) ui.catalogNameError.textContent = errorMessage;
                 else if (errorMessage.includes("Description")) ui.catalogDescriptionError.textContent = errorMessage;
-                else if (errorMessage.includes("Start Date") || (errorMessage.includes("Date") && !errorMessage.includes("End Date"))) ui.startDateError.textContent = errorMessage;
+                else if (errorMessage.includes("Start Date")) ui.startDateError.textContent = errorMessage;
                 else if (errorMessage.includes("End Date")) ui.endDateError.textContent = errorMessage;
                 else if (errorMessage.includes("Status")) ui.statusError.textContent = errorMessage;
-                else showMessage(errorMessage, 'error'); // Fallback for unhandled validation messages
+                else showMessage(errorMessage, 'error');
             }
         }
     };
 
-    /** Prompts for deletion and sets up the confirmation modal. */
     const promptForDelete = (catalogId) => {
         currentDeleteCatalogId = catalogId;
         ui.confirmMessage.textContent = `Are you sure you want to delete catalog ID ${currentDeleteCatalogId}? This action cannot be undone.`;
-        hideModal(ui.inputByIdModal); // Hide input modal if open
+        hideModal(ui.inputByIdModal);
         showModal(ui.confirmModal);
     };
 
-    /** Deletes a catalog via API. */
     const deleteCatalog = async (catalogId) => {
         try {
             const result = await apiRequest(`/api/catalogs/${catalogId}`, { method: 'DELETE' });
             showMessage(result.message, 'success');
-            fetchAndDisplayAllCatalogs(); // Refresh table
+            fetchAndDisplayAllCatalogs();
         } catch (error) {
-            // Error already shown by apiRequest
+            // Error already handled by apiRequest
         } finally {
-            hideModal(ui.confirmModal); // Always hide confirm modal after attempt
+            hideModal(ui.confirmModal);
             currentDeleteCatalogId = null;
             ui.confirmMessage.textContent = "";
         }
@@ -268,7 +256,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Client-side Form Validation ---
 
-    /** Validates catalog form inputs. */
     const validateCatalogForm = () => {
         clearFormErrorMessages();
         let isValid = true;
@@ -344,22 +331,21 @@ document.addEventListener('DOMContentLoaded', () => {
         showModal(ui.inputByIdModal);
     });
 
-    // Close buttons for modals
     ui.closeModalBtn.addEventListener('click', () => hideModal(ui.catalogModal));
     ui.closeConfirmModalBtn.addEventListener('click', () => hideModal(ui.confirmModal));
     ui.closeInputByIdModalBtn.addEventListener('click', () => hideModal(ui.inputByIdModal));
 
-    // Close modals on outside click
-    window.addEventListener('click', (event) => {
-        if (event.target === ui.catalogModal) hideModal(ui.catalogModal);
-        if (event.target === ui.confirmModal) hideModal(ui.confirmModal);
-        if (event.target === ui.inputByIdModal) hideModal(ui.inputByIdModal);
+    // Simplified modal closing on outside click
+    [ui.catalogModal, ui.confirmModal, ui.inputByIdModal].forEach(modal => {
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) hideModal(modal);
+        });
     });
 
     ui.catalogForm.addEventListener('submit', (event) => {
         event.preventDefault();
         if (validateCatalogForm()) {
-            const catalogId = ui.catalogId.value || null; // Will be empty string if new
+            const catalogId = ui.catalogId.value || null;
             const catalogData = {
                 name: ui.catalogName.value.trim(),
                 description: ui.catalogDescription.value.trim(),
@@ -390,16 +376,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Event delegation for Edit/Delete buttons in the table
     ui.catalogTableBody.addEventListener('click', (event) => {
         const target = event.target;
-        if (target.classList.contains('btn-small')) {
+        if (target.classList.contains('btn-edit-color')) {
             const catalogId = target.dataset.id;
-            if (target.textContent === 'Edit') {
-                fetchCatalogForEdit(catalogId);
-            } else if (target.textContent === 'Delete') {
-                promptForDelete(catalogId);
-            }
+            fetchCatalogForEdit(catalogId);
+        } else if (target.classList.contains('btn-danger-color')) {
+            const catalogId = target.dataset.id;
+            promptForDelete(catalogId);
         }
     });
 
