@@ -1,3 +1,8 @@
+/* static/css/style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Clash+Grotesk+Display:wght@400;700&display=swap');
+
 :root {
     /* Base Colors */
     --bg-color: #f7f9fc; /* Very light blue-gray background */
@@ -44,6 +49,7 @@
     --spacing-md: 15px;
     --spacing-lg: 20px;
     --spacing-xl: 30px;
+    --spacing-xxl: 40px; /* New larger spacing for main container padding */
 
     /* Shadows */
     --box-shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.08);
@@ -77,7 +83,7 @@ body {
 /* Main Container Styles */
 .container {
     background-color: var(--modal-content-bg);
-    padding: var(--spacing-xl);
+    padding: var(--spacing-xxl); /* Increased padding for overall better spacing */
     border-radius: var(--border-radius-lg);
     box-shadow: var(--box-shadow-lg);
     max-width: 1200px;
@@ -87,9 +93,38 @@ body {
     border: 1px solid var(--border-color);
 }
 
+/* Header for main page */
+.main-header {
+    display: flex;
+    justify-content: space-between; /* Keep space-between for title and logout */
+    align-items: center;
+    margin-bottom: var(--spacing-md); /* Reduced margin to pull up */
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.main-header h1 {
+    margin: 0;
+    flex-grow: 1; /* Allow title to take available space */
+    text-align: center; /* Center the title */
+    padding: var(--spacing-sm) 0; /* Add some vertical padding to the title */
+}
+
+.auth-nav {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+
+#loggedInUser {
+    font-weight: 600;
+    color: var(--primary-main-color);
+    margin-right: var(--spacing-sm);
+}
+
+
 /* Headings */
 h1, h2 {
-    text-align: center;
     color: var(--primary-main-color);
     margin-bottom: var(--spacing-xl);
     font-weight: var(--heading-font-weight);
@@ -98,25 +133,55 @@ h1, h2 {
 
 /* Main Title Specific Styling */
 #mainTitle {
-    font-family: 'Montserrat', sans-serif; /* Montserrat font */
-    text-transform: uppercase; /* Uppercase */
-    font-size: 2.8em;
-    letter-spacing: 2px;
+    font-family: 'Clash Grotesk Display', sans-serif;
+    text-transform: uppercase;
+    font-size: 2.2em; /* Made slightly smaller as requested */
+    letter-spacing: 1.8px;
     font-weight: 700;
-    display: block; /* Ensures block behavior for centering */
-    margin-left: auto; /* For horizontal centering */
-    margin-right: auto; /* For horizontal centering */
 }
 
-/* Button Group Layout */
+/* NEW: Catalog Header Controls for Search, Button, Filter */
+.catalog-header-controls {
+    display: flex;
+    justify-content: space-between; /* Distribute items: left, center, right */
+    align-items: flex-end; /* Align inputs/buttons at the bottom */
+    gap: var(--spacing-md); /* Space between elements */
+    margin-bottom: var(--spacing-md); /* Reduced margin to pull up */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.catalog-header-controls .search-bar-container,
+.catalog-header-controls .filter-container {
+    flex: 1; /* Allow them to grow */
+    min-width: 180px; /* Make them more compact, adjust as needed */
+    max-width: 300px; /* Limit max width for compactness */
+}
+
+.catalog-header-controls .create-button-group {
+    flex-shrink: 0; /* Prevent button from shrinking */
+    margin: 0 auto; /* Center the button in the middle */
+}
+
+.search-bar-container .form-group,
+.filter-container .form-group {
+    margin-bottom: 0; /* Remove default margin from form-group */
+}
+
+.search-bar-container input[type="text"],
+.filter-container select {
+    padding: 8px 12px; /* Made input/select padding more compact */
+    font-size: 15px; /* Slightly smaller font for compactness */
+    height: 40px; /* Fixed height for alignment */
+}
+
+/* Button Group Layout (general, for modals) */
 .button-group {
     display: flex;
     justify-content: center;
     gap: var(--spacing-md);
-    margin-bottom: var(--spacing-xl);
-    flex-wrap: nowrap; /* Keep buttons on one line by default */
-    overflow-x: auto; /* Allow horizontal scrolling if buttons overflow */
-    padding-bottom: var(--spacing-sm); /* Padding for potential scrollbar */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: var(--spacing-xs);
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -151,8 +216,8 @@ button {
 .btn-small {
     height: 38px;
     padding: 0 15px;
-    font-size: 14px; /* Slightly smaller font for table buttons */
-    border-radius: var(--border-radius-sm); /* Slightly smaller border-radius for consistency */
+    font-size: 14px;
+    border-radius: var(--border-radius-sm);
 }
 
 /* Button Color Themes */
@@ -190,23 +255,23 @@ button {
 }
 
 .btn-edit-color {
-    background-color: var(--edit-button-color); /* Yellow */
+    background-color: var(--edit-button-color);
     color: var(--text-color);
 }
 
 .btn-edit-color:hover {
-    background-color: var(--edit-button-hover); /* Darker yellow on hover */
+    background-color: var(--edit-button-hover);
     transform: translateY(-1px);
     box-shadow: var(--box-shadow-sm);
 }
 
 .btn-danger-color {
-    background-color: var(--delete-button-color); /* Red */
+    background-color: var(--delete-button-color);
     color: white;
 }
 
 .btn-danger-color:hover {
-    background-color: var(--delete-button-hover); /* Darker red on hover */
+    background-color: var(--delete-button-hover);
     transform: translateY(-1px);
     box-shadow: var(--box-shadow-sm);
 }
@@ -216,7 +281,7 @@ button {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    margin-top: var(--spacing-lg);
+    margin-top: var(--spacing-md); /* Reduced margin to pull up */
     box-shadow: var(--box-shadow-md);
     border-radius: var(--border-radius-md);
     overflow: hidden;
@@ -234,7 +299,7 @@ button {
     background-color: var(--table-header-bg);
     color: var(--primary-main-color);
     font-weight: var(--heading-font-weight);
-    text-transform: uppercase; /* Table headers uppercase */
+    text-transform: uppercase;
     font-size: 14px;
     letter-spacing: 0.8px;
 }
@@ -347,10 +412,12 @@ button {
 
 .form-group input[type="text"],
 .form-group input[type="date"],
+.form-group input[type="email"],
+.form-group input[type="password"],
 .form-group textarea,
 .form-group select {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     border: 1px solid var(--input-border-color);
     border-radius: var(--border-radius-sm);
     font-size: 16px;
@@ -362,6 +429,8 @@ button {
 
 .form-group input[type="text"]:focus,
 .form-group input[type="date"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
 .form-group textarea:focus,
 .form-group select:focus {
     outline: none;
@@ -402,7 +471,7 @@ button {
 
 /* Message Container for Alerts */
 #message-container {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
     text-align: center;
     min-height: 50px;
 }
@@ -440,7 +509,7 @@ button {
     width: 30px;
     height: 30px;
     animation: spin 1s linear infinite;
-    margin: 20px auto;
+    margin: 15px auto;
     display: none;
 }
 
@@ -453,34 +522,90 @@ button {
     100% { transform: rotate(360deg); }
 }
 
+/* Table Scroll Container */
+.table-scroll-container {
+    max-height: 500px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--box-shadow-md);
+}
+
+/* Ensure table headers stick to the top when scrolling */
+.catalog-table thead th {
+    position: sticky;
+    top: 0;
+    background-color: var(--table-header-bg);
+    z-index: 10;
+}
+
+
 /* Responsive Adjustments */
 
-/* Tablets and smaller (e.g., max-width 1024px to allow button group to flex) */
+/* Tablets and smaller (e.g., max-width 1024px) */
 @media (max-width: 1024px) {
     .container {
         padding: var(--spacing-lg);
     }
-    .button-group {
-        flex-wrap: wrap;
-        justify-content: center;
+    .main-header {
+        flex-direction: column;
+        align-items: center; /* Center header items when stacked */
+        text-align: center;
     }
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: var(--spacing-md);
-        margin-top: var(--spacing-md);
+    .main-header h1 {
+        text-align: center;
+        width: 100%;
         margin-bottom: var(--spacing-md);
     }
-    .button-group {
-        gap: var(--spacing-sm);
+    .auth-nav {
+        width: 100%;
+        justify-content: center;
     }
+
+    /* Stack search, button, filter vertically on smaller screens */
+    .catalog-header-controls {
+        flex-direction: column;
+        align-items: stretch; /* Stretch items to full width */
+        gap: var(--spacing-md);
+    }
+    .catalog-header-controls .search-bar-container,
+    .catalog-header-controls .filter-container {
+        min-width: unset;
+        max-width: unset;
+        width: 100%;
+    }
+    .catalog-header-controls .create-button-group {
+        width: 100%; /* Make button full width when stacked */
+        margin: 0; /* Remove auto margin when stacked */
+    }
+    .catalog-header-controls .create-button-group button {
+        width: 100%; /* Ensure button itself takes full width */
+    }
+
     .catalog-table th,
     .catalog-table td {
-        padding: var(--spacing-sm);
+        display: block; /* Stack table cells */
+        width: 100%;
+        text-align: right;
+        padding-left: 50%; /* Make space for data-label */
+        position: relative;
     }
-    .catalog-table {
-        font-size: 0.9em;
+    .catalog-table thead {
+        display: none; /* Hide original headers */
+    }
+    .catalog-table td::before {
+        content: attr(data-label); /* Use data-label for custom header */
+        position: absolute;
+        left: 0;
+        width: 45%; /* Adjust width for label */
+        padding-left: var(--spacing-md);
+        font-weight: 700;
+        text-align: left;
+        color: var(--primary-main-color);
+    }
+    .catalog-table td.actions {
+        justify-content: flex-start; /* Align action buttons to left */
+        padding-left: var(--spacing-md); /* Adjust padding for actions */
     }
     .modal-content {
         padding: var(--spacing-lg);
@@ -489,6 +614,9 @@ button {
         font-size: 28px;
         top: 10px;
         right: 15px;
+    }
+    .table-scroll-container {
+        max-height: 400px;
     }
 }
 
@@ -499,40 +627,8 @@ button {
         margin-bottom: var(--spacing-lg);
     }
     #mainTitle {
-        font-size: 2.2em; /* Adjust for smaller screens */
-        letter-spacing: 1.5px;
-    }
-    .button-group {
-        flex-direction: column;
-        gap: var(--spacing-sm);
-    }
-    .button-group .btn-large {
-        width: 100%;
-    }
-    .catalog-table th,
-    .catalog-table td {
-        display: block;
-        width: 100%;
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
-    }
-    .catalog-table thead {
-        display: none;
-    }
-    .catalog-table td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 0;
-        width: 45%;
-        padding-left: var(--spacing-md);
-        font-weight: 700;
-        text-align: left;
-        color: var(--primary-main-color);
-    }
-    .catalog-table td.actions {
-        justify-content: flex-start;
-        padding-left: var(--spacing-md);
+        font-size: 1.8em; /* Further adjust for very small screens */
+        letter-spacing: 1px;
     }
     .no-catalogs {
         font-size: 1em;
@@ -543,5 +639,8 @@ button {
     }
     .confirm-modal h2 {
         font-size: 1.5em;
+    }
+    .table-scroll-container {
+        max-height: 300px;
     }
 }

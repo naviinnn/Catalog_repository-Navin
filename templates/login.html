@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Catalog Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Google Fonts for Inter and Clash Grotesk Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Clash+Grotesk+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Specific styles for the login page container */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            background-image: linear-gradient(135deg, var(--bg-color) 0%, color-mix(in srgb, var(--bg-color) 70%, white 30%) 100%);
+        }
+        .auth-container {
+            background-color: var(--modal-content-bg);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow-lg);
+            width: 90%;
+            max-width: 450px; /* Smaller than main container, similar to modals */
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+        .auth-container h1 {
+            color: var(--primary-main-color);
+            margin-bottom: var(--spacing-lg);
+            font-size: 2.2em; /* Adjusted for auth page */
+            font-family: 'Clash Grotesk Display', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        .auth-container .form-group {
+            margin-bottom: var(--spacing-md); /* Slightly less spacing for denser forms */
+            text-align: left;
+        }
+        .auth-container button {
+            width: 100%; /* Make buttons full width in auth forms */
+            margin-top: var(--spacing-md);
+        }
+        /* Removed .auth-container p and .auth-container p a styles as registration link is gone */
+        #message-container {
+            margin-bottom: var(--spacing-md); /* Adjust margin for message container */
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <h1>Login</h1>
+        <div id="message-container"></div>
+        <div id="loadingSpinner" class="spinner"></div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username_or_email">Username or Email:</label>
+                <input type="text" id="username_or_email" required>
+                <span id="usernameOrEmailError" class="error-text"></span>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+                <span id="passwordError" class="error-text"></span>
+            </div>
+            <button type="submit" class="btn-large btn-primary-color">Login</button>
+        </form>
+        <!-- Removed registration link -->
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        // Separate script for login page functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const getById = (id) => document.getElementById(id);
+
+            const loginForm = getById('loginForm');
+            const usernameOrEmailInput = getById('username_or_email');
+            const passwordInput = getById('password');
+            const usernameOrEmailError = getById('usernameOrEmailError');
+            const passwordError = getById('passwordError');
+            const messageContainer = getById('message-container');
+            const loadingSpinner = getById('loadingSpinner');
+
+            const showMessage = (message, type = 'success') => {
+                const alertDiv = document.createElement('div');
+                alertDiv.className = `alert alert-${type}`;
+                alertDiv.textContent = message;
+                messageContainer.innerHTML = '';
+                messageContainer.appendChild(alertDiv);
+                setTimeout(() => alertDiv.remove(), 5000);
+            };
+
+            const showSpinner = () => loadingSpinner.classList.add('show');
+            const hideSpinner = () => loadingSpinner.classList.remove('show');
+
+            const clearErrors = () => {
+                usernameOrEmailError.textContent = '';
+                passwordError.textContent = '';
+            };
+
+            loginForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                clearErrors();
+                showSpinner();
+
+                const username_or_email = usernameOrEmailInput.value.trim();
+                const password = passwordInput.value.trim();
+
+                if (!username_or_email) { usernameOrEmailError.textContent = 'Username or Email is required.'; hideSpinner(); return; }
+                if (!password) { passwordError.textContent = 'Password is required.'; hideSpinner(); return; }
+
+                try {
+                    const response = await fetch('/api/login', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ username_or_email, password })
+                    });
+
+                    const data = await response.json();
+                    hideSpinner();
+
+                    if (response.ok) {
+                        showMessage(data.message, 'success');
+                        // Store username and token
+                        // Note: JWT is typically in HttpOnly cookie, so we don't access it directly in JS.
+                        // We store the username for display purposes.
+                        localStorage.setItem('username', data.data.username); // Store username
+                        // Redirect to main page after successful login
+                        window.location.href = '/'; 
+                    } else {
+                        showMessage(data.details || data.message || 'Login failed.', 'error');
+                        // Backend errors are now more generic for authentication, so just show general error
+                        // No specific field mapping needed for "username/email or password"
+                    }
+                } catch (error) {
+                    hideSpinner();
+                    console.error('Login request failed:', error);
+                    showMessage('Network error: Could not connect to the server.', 'error');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

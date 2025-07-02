@@ -1,3 +1,5 @@
+# service/catalog_service.py
+
 import mysql.connector
 from utils.db_get_connection import get_connection
 from dto.catalog import Catalog
@@ -7,6 +9,7 @@ class CatalogService:
     """
     Service layer for Catalog operations, interacting with the database.
     Encapsulates business logic and abstracts database access.
+    (Authorization checks removed, only authentication required for access)
     """
 
     def _execute_query(self, query: str, params: tuple = None, fetch_one: bool = False, fetch_all: bool = False, commit: bool = False):
@@ -45,34 +48,68 @@ class CatalogService:
             if conn:
                 conn.close()
 
-    def create_catalog(self, catalog: Catalog) -> int:
-        """Adds a new catalog entry to the database."""
+    def create_catalog(self, catalog: Catalog, user_id: int) -> int:
+        """Adds a new catalog entry to the database, associated with a user."""
         query = """
-            INSERT INTO catalog (catalog_name, catalog_description, start_date, end_date, status)
-            VALUES (%s, %s, %s, %s, %s)
+            INSERT INTO catalog (catalog_name, catalog_description, start_date, end_date, status, user_id)
+            VALUES (%s, %s, %s, %s, %s, %s)
         """
-        params = (catalog.name, catalog.description, catalog.start_date, catalog.end_date, catalog.status)
+        params = (catalog.name, catalog.description, catalog.start_date, catalog.end_date, catalog.status, user_id)
         catalog_id = self._execute_query(query, params, commit=True)
         return catalog_id
 
     def get_catalog_by_id(self, catalog_id: int) -> dict:
-        """Retrieves a single catalog entry by its ID."""
-        catalog_data = self._execute_query("SELECT * FROM catalog WHERE catalog_id = %s", (catalog_id,), fetch_one=True)
+        """
+        Retrieves a single catalog entry by its ID.
+        (No ownership check - any authenticated user can view)
+        """
+        query = "SELECT * FROM catalog WHERE catalog_id = %s"
+        params = (catalog_id,)
+        
+        catalog_data = self._execute_query(query, params, fetch_one=True)
         if not catalog_data:
             raise DataNotFoundError(f"Catalog with ID {catalog_id} not found.")
         return catalog_data
 
-    def get_all_catalog(self, search_term: str = '') -> list:
-        """Retrieves all catalog entries, with optional filtering by name or description."""
-        query = "SELECT * FROM catalog"
-        params = ()
+    def get_all_catalog(self, search_term: str = '', status_filter: str = None) -> list:
+        """
+        Retrieves all catalog entries.
+        Includes search by catalog_id or catalog_name and optional status filtering.
+        (No ownership filter - all authenticated users see all catalogs)
+        """
+        query = "SELECT * FROM catalog WHERE 1=1"
+        params = []
+
+        # The user_id filter condition is intentionally removed here.
+        # This ensures all catalogs are fetched, regardless of ownership.
+        # if user_id is not None:
+        #     query += " AND user_id = %s"
+        #     params.append(user_id)
+
         if search_term:
-            query += " WHERE catalog_name LIKE %s OR catalog_description LIKE %s"
-            params = (f"%{search_term}%", f"%{search_term}%")
-        return self._execute_query(query, params, fetch_all=True)
+            if search_term.isdigit():
+                query += " AND (catalog_id = %s OR catalog_name LIKE %s)"
+                params.extend([int(search_term), f"%{search_term}%"])
+            else:
+                query += " AND catalog_name LIKE %s"
+                params.append(f"%{search_term}%")
+        
+        if status_filter:
+            query += " AND status = %s"
+            params.append(status_filter)
+
+        query += " ORDER BY catalog_id DESC"
+
+        return self._execute_query(query, tuple(params), fetch_all=True)
 
     def update_catalog_by_id(self, catalog_id: int, catalog: Catalog) -> bool:
-        """Updates an existing catalog entry identified by its ID."""
+        """
+        Updates an existing catalog entry identified by its ID.
+        (No ownership check - any authenticated user can update)
+        """
+        # First, check if the catalog exists to raise DataNotFoundError if not
+        self.get_catalog_by_id(catalog_id)
+
         query = """
             UPDATE catalog
             SET catalog_name = %s, catalog_description = %s,
@@ -80,14 +117,26 @@ class CatalogService:
             WHERE catalog_id = %s
         """
         params = (catalog.name, catalog.description, catalog.start_date, catalog.end_date, catalog.status, catalog_id)
+        
         row_count = self._execute_query(query, params, commit=True)
         if row_count == 0:
-            raise DataNotFoundError(f"Catalog with ID {catalog_id} not found for update.")
+            # This case should ideally not be reached if get_catalog_by_id didn't raise
+            raise DataNotFoundError(f"Catalog with ID {catalog_id} not found for update (no rows affected).")
         return True
 
     def delete_catalog_by_id(self, catalog_id: int) -> bool:
-        """Deletes a catalog entry by its ID."""
-        row_count = self._execute_query("DELETE FROM catalog WHERE catalog_id = %s", (catalog_id,), commit=True)
+        """
+        Deletes a catalog entry by its ID.
+        (No ownership check - any authenticated user can delete)
+        """
+        # First, check if the catalog exists to raise DataNotFoundError if not
+        self.get_catalog_by_id(catalog_id)
+
+        query = "DELETE FROM catalog WHERE catalog_id = %s"
+        params = (catalog_id,)
+
+        row_count = self._execute_query(query, params, commit=True)
         if row_count == 0:
-            raise DataNotFoundError(f"Catalog with ID {catalog_id} not found for deletion.")
+            # This case should ideally not be reached if get_catalog_by_id didn't raise
+            raise DataNotFoundError(f"Catalog with ID {catalog_id} not found for deletion (no rows affected).")
         return True

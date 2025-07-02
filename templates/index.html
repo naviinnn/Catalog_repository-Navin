@@ -5,46 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalog Manager</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <!-- Google Fonts for Inter and Montserrat -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <!-- Google Fonts are imported in style.css now -->
 </head>
-<body class="light-theme">
+<body>
     <div class="container">
-        <h1 id="mainTitle">Catalog Manager</h1>
+        <header class="main-header">
+            <h1 id="mainTitle">Catalog Manager</h1>
+            <nav class="auth-nav">
+                <span id="loggedInUser" style="display: none;"></span>
+                <button id="logoutBtn" class="btn-small btn-danger-color" style="display: none;">Logout</button>
+            </nav>
+        </header>
 
         <div id="message-container"></div>
         <div id="loadingSpinner" class="spinner"></div>
 
-        <!-- Button group optimized for single line on larger screens, wraps on smaller -->
-        <div class="button-group">
-            <button id="createCatalogBtn" class="btn-large btn-primary-color">Create New Catalog</button>
-            <button id="viewAllCatalogsBtn" class="btn-large btn-secondary-color">View All Catalogs</button>
-            <button id="updateByIdBtn" class="btn-large btn-secondary-color">Update Catalog by ID</button>
-            <button id="deleteByIdBtn" class="btn-large btn-danger-color">Delete Catalog by ID</button>
-            <button id="viewByIdBtn" class="btn-large btn-secondary-color">View Catalog by ID</button>
+        <!-- NEW: Single row for Search, Create Button, and Filter -->
+        <div class="catalog-header-controls">
+            <div class="search-bar-container">
+                <div class="form-group">
+                    <label for="searchCatalog">Search by ID or Name:</label>
+                    <input type="text" id="searchCatalog" placeholder="Enter ID or Name...">
+                </div>
+            </div>
+            
+            <div class="button-group create-button-group"> <!-- Added class for specific styling -->
+                <button id="createCatalogBtn" class="btn-large btn-primary-color">Create New Catalog</button>
+            </div>
+
+            <div class="filter-container">
+                <div class="form-group">
+                    <label for="statusFilter">Filter by Status:</label>
+                    <select id="statusFilter">
+                        <option value="">All</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                </div>
+            </div>
         </div>
 
         <div id="noCatalogsMessage" class="no-catalogs" style="display: none;">
             No catalogs found. Create one to get started!
         </div>
 
-        <table class="catalog-table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Start Date</th>
-                    <th>End Date</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="catalogTableBody"></tbody>
-        </table>
+        <div class="table-scroll-container">
+            <table class="catalog-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="catalogTableBody"></tbody>
+            </table>
+        </div>
     </div>
 
-    <!-- Modal for Create/Update Catalog Form -->
+    <!-- Modals -->
+    <!-- Create/Edit Catalog Modal -->
     <div id="catalogModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
         <div class="modal-content">
             <span class="close-button" id="closeModalBtn">&times;</span>
@@ -96,7 +120,6 @@
         </div>
     </div>
 
-    <!-- Modal for Delete Confirmation -->
     <div id="confirmModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
         <div class="modal-content">
             <span class="close-button" id="closeConfirmModalBtn">&times;</span>
@@ -106,25 +129,6 @@
                 <button id="confirmDeleteBtn" class="btn-large btn-danger-color">Delete</button>
                 <button type="button" class="btn-large btn-secondary-color" onclick="document.getElementById('cancelDeleteBtn').click()">Cancel</button>
             </div>
-        </div>
-    </div>
-
-    <!-- Modal for ID Input (Update, Delete, View by ID) -->
-    <div id="inputByIdModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
-        <div class="modal-content">
-            <span class="close-button" id="closeInputByIdModalBtn">&times;</span>
-            <h2 id="actionByIdTitle">Enter Catalog ID</h2>
-            <form id="inputByIdForm">
-                <div class="form-group">
-                    <label for="inputCatalogId">Catalog ID:</label>
-                    <input type="text" id="inputCatalogId" required pattern="[0-9]+" title="Please enter a valid ID (numbers only)">
-                    <span id="inputByIdError" class="error-text"></span>
-                </div>
-                <div class="button-group">
-                    <button type="submit" id="actionByIdSubmitBtn" class="btn-large btn-primary-color">Submit</button>
-                    <button type="button" class="btn-large btn-secondary-color" onclick="document.getElementById('closeInputByIdModalBtn').click()">Cancel</button>
-                </div>
-            </form>
         </div>
     </div>
 

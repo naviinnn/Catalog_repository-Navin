@@ -1,11 +1,21 @@
-class ValidationError(Exception):
-    """Custom exception for input validation errors."""
+# exception/catalog_exception.py
+
+class CatalogError(Exception):
+    """Base exception for catalog-related errors."""
     pass
 
-class DatabaseConnectionError(Exception):
-    """Custom exception for database connection or interaction issues."""
+class ValidationError(CatalogError):
+    """Exception raised for invalid input data."""
     pass
 
-class DataNotFoundError(Exception):
-    """Custom exception when a requested data entity is not found."""
+class DataNotFoundError(CatalogError):
+    """Exception raised when requested data is not found."""
+    pass
+
+class DatabaseConnectionError(CatalogError):
+    """Exception raised for database connection or operation errors."""
+    pass
+
+class AuthenticationError(CatalogError):
+    """Exception raised for authentication failures."""
     pass
