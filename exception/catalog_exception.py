@@ -1,5 +1,3 @@
-# exception/catalog_exception.py
-
 class CatalogError(Exception):
     """Base exception for catalog-related errors."""
     pass

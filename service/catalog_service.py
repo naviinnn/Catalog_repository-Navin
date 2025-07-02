@@ -1,5 +1,3 @@
-# service/catalog_service.py
-
 import mysql.connector
 from utils.db_get_connection import get_connection
 from dto.catalog import Catalog
@@ -71,36 +69,50 @@ class CatalogService:
             raise DataNotFoundError(f"Catalog with ID {catalog_id} not found.")
         return catalog_data
 
-    def get_all_catalog(self, search_term: str = '', status_filter: str = None) -> list:
+    def get_all_catalog(self, search_term: str = '', status_filter: str = None, page: int = 1, per_page: int = 10) -> list:
         """
-        Retrieves all catalog entries.
+        Retrieves paginated catalog entries.
         Includes search by catalog_id or catalog_name and optional status filtering.
-        (No ownership filter - all authenticated users see all catalogs)
         """
         query = "SELECT * FROM catalog WHERE 1=1"
         params = []
 
-        # The user_id filter condition is intentionally removed here.
-        # This ensures all catalogs are fetched, regardless of ownership.
-        # if user_id is not None:
-        #     query += " AND user_id = %s"
-        #     params.append(user_id)
-
         if search_term:
-            if search_term.isdigit():
-                query += " AND (catalog_id = %s OR catalog_name LIKE %s)"
-                params.extend([int(search_term), f"%{search_term}%"])
-            else:
-                query += " AND catalog_name LIKE %s"
-                params.append(f"%{search_term}%")
+            # Using ILIKE for case-insensitive search (might be LIKE in MySQL depending on collation)
+            # For MySQL, LIKE is case-insensitive by default on many installations, or use lower()
+            query += " AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s)"
+            params.extend([search_term, f"%{search_term}%", f"%{search_term}%"])
         
         if status_filter:
             query += " AND status = %s"
             params.append(status_filter)
 
-        query += " ORDER BY catalog_id DESC"
+        query += " ORDER BY catalog_id DESC" # Ensure consistent ordering for pagination
+
+        # Add LIMIT and OFFSET for pagination
+        offset = (page - 1) * per_page
+        query += " LIMIT %s OFFSET %s"
+        params.extend([per_page, offset])
 
         return self._execute_query(query, tuple(params), fetch_all=True)
+
+    def count_catalogs(self, search_term: str = '', status_filter: str = None) -> int:
+        """
+        Counts the total number of catalog entries matching the search and filter criteria.
+        """
+        query = "SELECT COUNT(*) FROM catalog WHERE 1=1"
+        params = []
+
+        if search_term:
+            query += " AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s)"
+            params.extend([search_term, f"%{search_term}%", f"%{search_term}%"])
+        
+        if status_filter:
+            query += " AND status = %s"
+            params.append(status_filter)
+
+        result = self._execute_query(query, tuple(params), fetch_one=True)
+        return result['COUNT(*)'] if result else 0
 
     def update_catalog_by_id(self, catalog_id: int, catalog: Catalog) -> bool:
         """

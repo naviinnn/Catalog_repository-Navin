@@ -1,5 +1,3 @@
-# app.py
-
 from flask import Flask, request, jsonify, render_template, redirect, url_for, session
 import os
 import sys
@@ -87,13 +85,20 @@ def serialize_catalog_for_json(catalog_data: dict) -> dict:
     return serialized_data
 
 # --- Frontend Routes ---
+from flask_jwt_extended import verify_jwt_in_request, exceptions
+
 @app.route('/')
 def root_route():
     """
-    Always redirects to the login page.
-    The only way to access /home is via a successful login POST.
+    Redirect to /home if user is authenticated with valid JWT cookie,
+    else redirect to login page.
     """
-    return redirect(url_for('login_page'))
+    try:
+        verify_jwt_in_request()
+        return redirect(url_for('index_page'))
+    except exceptions.NoAuthorizationError:
+        return redirect(url_for('login_page'))
+
 
 @app.route('/home')
 @jwt_required() # This route now requires JWT authentication
@@ -194,22 +199,40 @@ def get_catalog_by_id_api(catalog_id: int) -> tuple[jsonify, int]:
 @jwt_required(optional=True)
 def get_all_catalogs_api() -> tuple[jsonify, int]:
     """
-    API endpoint to retrieve all catalog entries with optional search term and status filter.
+    API endpoint to retrieve all catalog entries with optional search term, status filter,
+    and pagination parameters.
     """
     search_term = request.args.get('search', '').strip()
     status_filter = request.args.get('status', '').strip().lower()
+    page = request.args.get('page', 1, type=int)
+    per_page = request.args.get('per_page', 10, type=int) # Default to 10 items per page
 
     # Define allowed statuses for filtering
     allowed_filter_statuses = ['active', 'inactive']
 
     try:
-        catalogs_data = catalog_service.get_all_catalog(
+        # Get total count of catalogs matching search/filter criteria (before pagination)
+        total_catalogs = catalog_service.count_catalogs(
             search_term=search_term,
-            # Only apply status filter if it's one of the allowed values
             status_filter=status_filter if status_filter in allowed_filter_statuses else None
         )
+
+        # Fetch paginated data
+        catalogs_data = catalog_service.get_all_catalog(
+            search_term=search_term,
+            status_filter=status_filter if status_filter in allowed_filter_statuses else None,
+            page=page,
+            per_page=per_page
+        )
         serialized_catalogs = [serialize_catalog_for_json(c) for c in catalogs_data]
-        return jsonify({"message": "Catalogs retrieved successfully.", "data": serialized_catalogs}), 200
+
+        return jsonify({
+            "message": "Catalogs retrieved successfully.",
+            "data": serialized_catalogs,
+            "total_catalogs": total_catalogs,
+            "page": page,
+            "per_page": per_page
+        }), 200
 
     except DatabaseConnectionError as e:
         return handle_database_error(e)

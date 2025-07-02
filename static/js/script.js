@@ -1,9 +1,7 @@
-// static/js/script.js
-
-console.log('script.js: File loaded and parsed.'); // Log when the file itself is loaded
+console.log('script.js: File loaded and parsed.');
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('script.js: DOMContentLoaded event fired.'); // Log when DOM is ready
+    console.log('script.js: DOMContentLoaded event fired.');
 
     // --- DOM Element References & Utility ---
     const getById = (id) => document.getElementById(id);
@@ -62,11 +60,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Search and Filter controls
         searchCatalog: getById('searchCatalog'),
-        statusFilter: getById('statusFilter'), 
+        statusFilter: getById('statusFilter'),
+
+        // Pagination elements
+        prevPageBtn: getById('prevPageBtn'),
+        nextPageBtn: getById('nextPageBtn'),
+        currentPageSpan: getById('currentPageSpan'),
+        totalPagesSpan: getById('totalPagesSpan'),
     };
 
     // --- State Variables ---
     let currentDeleteCatalogId = null;
+    let currentPage = 1; // Current page number
+    const itemsPerPage = 10; // Changed back to 10
+    let totalPages = 1; // Total number of pages
 
     // --- UI Feedback & Modal Management ---
 
@@ -206,13 +213,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    /** Fetches and displays all catalogs, with optional search term and status filter. */
+    /** Fetches and displays all catalogs, with optional search term, status filter, and pagination. */
     const fetchAndDisplayAllCatalogs = async () => {
         console.log('fetchAndDisplayAllCatalogs: Function called.'); 
 
         const searchTerm = ui.searchCatalog ? ui.searchCatalog.value.trim() : '';
         const statusFilter = ui.statusFilter ? ui.statusFilter.value : '';
-        console.log(`DEBUG: statusFilter value from UI: '${statusFilter}'`); // NEW: Debug log for filter value
+        console.log(`DEBUG: statusFilter value from UI: '${statusFilter}'`);
 
         let url = `/api/catalogs`;
         const params = new URLSearchParams();
@@ -222,6 +229,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (statusFilter) { 
             params.append('status', statusFilter);
         }
+        // Add pagination parameters
+        params.append('page', currentPage);
+        params.append('per_page', itemsPerPage);
+
         if (params.toString()) {
             url += `?${params.toString()}`;
         }
@@ -230,8 +241,19 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const result = await apiRequest(url);
             const catalogs = result.data || [];
+            const totalCatalogs = result.total_catalogs || 0; // Get total count from API
 
             console.log('Received catalogs:', catalogs); 
+            console.log('Total catalogs (for pagination):', totalCatalogs);
+
+            // Update pagination info
+            totalPages = Math.ceil(totalCatalogs / itemsPerPage);
+            if (ui.currentPageSpan) ui.currentPageSpan.textContent = currentPage;
+            if (ui.totalPagesSpan) ui.totalPagesSpan.textContent = totalPages;
+
+            // Enable/disable pagination buttons
+            if (ui.prevPageBtn) ui.prevPageBtn.disabled = currentPage <= 1;
+            if (ui.nextPageBtn) ui.nextPageBtn.disabled = currentPage >= totalPages;
 
             if (ui.catalogTableBody) {
                 ui.catalogTableBody.innerHTML = ''; // Clear existing table rows
@@ -309,6 +331,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             showMessage(result.message, 'success');
             hideModal(ui.catalogModal);
+            // After saving, reset page to 1 to ensure new/updated item is visible
+            currentPage = 1; 
             resetCatalogForm();
             fetchAndDisplayAllCatalogs();
         } catch (error) {
@@ -339,6 +363,8 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const result = await apiRequest(`/api/catalogs/${catalogId}`, { method: 'DELETE' });
             showMessage(result.message, 'success');
+            // After deleting, reset page to 1 to ensure consistent view
+            currentPage = 1;
             fetchAndDisplayAllCatalogs();
         } catch (error) {
             // Error already handled by apiRequest
@@ -460,27 +486,44 @@ document.addEventListener('DOMContentLoaded', () => {
     // Search and Filter listeners
     if (ui.searchCatalog) {
         ui.searchCatalog.addEventListener('input', () => {
+            currentPage = 1; // Reset to first page on new search
             fetchAndDisplayAllCatalogs();
         });
     }
     if (ui.statusFilter) { 
         ui.statusFilter.addEventListener('change', () => { 
-            console.log("Status filter changed. Calling fetchAndDisplayAllCatalogs."); // NEW: Add this log
+            console.log("Status filter changed. Calling fetchAndDisplayAllCatalogs.");
+            currentPage = 1; // Reset to first page on new filter
             fetchAndDisplayAllCatalogs();
+        });
+    }
+
+    // Pagination button listeners
+    if (ui.prevPageBtn) {
+        ui.prevPageBtn.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                fetchAndDisplayAllCatalogs();
+            }
+        });
+    }
+    if (ui.nextPageBtn) {
+        ui.nextPageBtn.addEventListener('click', () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                fetchAndDisplayAllCatalogs();
+            }
         });
     }
 
     // Close buttons for all modals
     if (ui.closeModalBtn) { ui.closeModalBtn.addEventListener('click', () => hideModal(ui.catalogModal)); }
     if (ui.closeConfirmModalBtn) { ui.closeConfirmModalBtn.addEventListener('click', () => hideModal(ui.confirmModal)); }
-    // Removed ui.closeInputByIdModalBtn as it's not in your current ui object
-    // Removed ui.inputByIdModal as it's not in your current ui object
-
+    
     // Close modals when clicking outside their content (event delegation on window)
     window.addEventListener('click', (event) => {
         if (ui.catalogModal && event.target === ui.catalogModal) hideModal(ui.catalogModal);
         if (ui.confirmModal && event.target === ui.confirmModal) hideModal(ui.confirmModal);
-        // Removed ui.inputByIdModal as it's not in your current ui object
     });
 
     // Main catalog form submission
@@ -500,9 +543,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    // Removed ID input form submission (for Update, Delete, View by ID) as it's not in your current ui object
-    // if (ui.inputByIdForm) { ... }
 
     // Event delegation for Edit/Delete buttons dynamically added to the table
     // CRITICAL: Ensure this matches the class names in index.html
