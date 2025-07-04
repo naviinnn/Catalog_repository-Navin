@@ -3,6 +3,8 @@ import os
 import sys
 from datetime import date, datetime, timedelta
 import configparser
+from utils.logger import logger
+
 
 # JWT specific imports
 from flask_jwt_extended import create_access_token, jwt_required, JWTManager, get_jwt_identity, set_access_cookies, unset_jwt_cookies, verify_jwt_in_request
@@ -24,7 +26,7 @@ app = Flask(__name__)
 config = configparser.ConfigParser()
 config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config', 'config.ini')
 if not os.path.exists(config_path):
-    print(f"FATAL ERROR: Configuration file not found at: {config_path}")
+    logger.critical(f"FATAL ERROR: Configuration file not found at: {config_path}")
     sys.exit(1)
 config.read(config_path)
 
@@ -48,7 +50,7 @@ def page_not_found(e):
 
 @app.errorhandler(500)
 def internal_server_error(e):
-    app.logger.error(f"Internal Server Error: {e}", exc_info=True)
+    logger.error(f"Internal Server Error: {e}", exc_info=True)
     return render_template('500.html'), 500
 
 @app.errorhandler(ValidationError)
@@ -61,7 +63,7 @@ def handle_data_not_found_error(e):
 
 @app.errorhandler(DatabaseConnectionError)
 def handle_database_error(e):
-    app.logger.critical(f"Database Connection Error: {e}", exc_info=True)
+    logger.critical(f"Database Connection Error: {e}", exc_info=True)
     return jsonify({"message": "Database Error", "details": "Could not connect to the database or a database operation failed."}), 500
 
 @app.errorhandler(AuthenticationError)
@@ -285,8 +287,8 @@ def delete_catalog_api(catalog_id: int) -> tuple[jsonify, int]:
 if __name__ == '__main__':
     config_path_check = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config', 'config.ini')
     if not os.path.exists(config_path_check):
-        print(f"FATAL ERROR: Database configuration file not found at '{config_path_check}'.")
-        print("Please ensure 'config.ini' exists in the 'config' directory and is properly configured.")
+        logger.critical(f"FATAL ERROR: Database configuration file not found at '{config_path_check}'.")
+        logger.critical("Please ensure 'config.ini' exists in the 'config' directory and is properly configured.")
         sys.exit(1)
 
     app.run(debug=True, port=5000)

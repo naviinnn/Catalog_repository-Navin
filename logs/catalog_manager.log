@@ -1,0 +1,373 @@
+2025-07-04 11:41:05,355 - INFO - Attempting to authenticate user: brucy
+2025-07-04 11:41:05,355 - INFO - Attempting to authenticate user: brucy
+2025-07-04 11:41:05,480 - INFO - Successfully connected to the MySQL database.
+2025-07-04 11:41:05,481 - INFO - Successfully connected to the MySQL database.
+2025-07-04 11:41:05,849 - DEBUG - Password check result: True
+2025-07-04 11:41:05,849 - DEBUG - Password check result: True
+2025-07-04 11:41:05,849 - INFO - User 'brucy' authenticated successfully.
+2025-07-04 11:41:05,849 - INFO - User 'brucy' authenticated successfully.
+2025-07-04 11:41:06,128 - INFO - Counting catalogs | search='', status='None'
+2025-07-04 11:41:06,136 - INFO - Successfully connected to the MySQL database.
+2025-07-04 11:41:06,136 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 8}
+2025-07-04 11:41:06,136 - DEBUG - Total catalogs matched: 8
+2025-07-04 11:41:06,136 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
+2025-07-04 11:41:06,145 - INFO - Successfully connected to the MySQL database.
+2025-07-04 11:41:06,148 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 8
+2025-07-04 12:26:02,778 - INFO - Counting catalogs | search='', status='None'
+2025-07-04 12:26:02,856 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:02,857 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 8}
+2025-07-04 12:26:02,857 - DEBUG - Total catalogs matched: 8
+2025-07-04 12:26:02,857 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
+2025-07-04 12:26:02,866 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:02,866 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 8
+2025-07-04 12:26:09,647 - INFO - Counting catalogs | search='', status='None'
+2025-07-04 12:26:09,655 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:09,655 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 8}
+2025-07-04 12:26:09,655 - DEBUG - Total catalogs matched: 8
+2025-07-04 12:26:09,655 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
+2025-07-04 12:26:09,661 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:09,661 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 8
+2025-07-04 12:26:24,614 - INFO - Authenticating user: brucy
+2025-07-04 12:26:24,614 - INFO - Authenticating user: brucy
+2025-07-04 12:26:24,614 - INFO - Fetching user by username: brucy
+2025-07-04 12:26:24,614 - INFO - Fetching user by username: brucy
+2025-07-04 12:26:24,636 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:24,636 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:24,640 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-04 12:26:24,640 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-04 12:26:24,640 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-04 12:26:24,640 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-04 12:26:25,008 - DEBUG - Password check result: True
+2025-07-04 12:26:25,008 - INFO - User 'brucy' authenticated successfully.
+2025-07-04 12:26:25,008 - DEBUG - Password check result: True
+2025-07-04 12:26:25,008 - INFO - User 'brucy' authenticated successfully.
+2025-07-04 12:26:25,307 - INFO - Counting catalogs | search='', status='None'
+2025-07-04 12:26:25,317 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:25,318 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 8}
+2025-07-04 12:26:25,318 - DEBUG - Total catalogs matched: 8
+2025-07-04 12:26:25,318 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
+2025-07-04 12:26:25,328 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:25,328 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 8
+2025-07-04 12:26:29,530 - INFO - Counting catalogs | search='', status='active'
+2025-07-04 12:26:29,541 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:29,541 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND status = %s | Params: ('active',) | Result: {'COUNT(*)': 5}
+2025-07-04 12:26:29,541 - DEBUG - Total catalogs matched: 5
+2025-07-04 12:26:29,541 - INFO - Retrieving all catalogs | search='', status='active', page=1, per_page=10
+2025-07-04 12:26:29,552 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:29,552 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND status = %s ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('active', 10, 0) | Result count: 5
+2025-07-04 12:26:34,034 - INFO - Counting catalogs | search='', status='inactive'
+2025-07-04 12:26:34,043 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:34,044 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND status = %s | Params: ('inactive',) | Result: {'COUNT(*)': 3}
+2025-07-04 12:26:34,045 - DEBUG - Total catalogs matched: 3
+2025-07-04 12:26:34,045 - INFO - Retrieving all catalogs | search='', status='inactive', page=1, per_page=10
+2025-07-04 12:26:34,050 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:34,050 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND status = %s ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('inactive', 10, 0) | Result count: 3
+2025-07-04 12:26:37,215 - INFO - Counting catalogs | search='', status='None'
+2025-07-04 12:26:37,229 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:37,230 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 8}
+2025-07-04 12:26:37,230 - DEBUG - Total catalogs matched: 8
+2025-07-04 12:26:37,230 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
+2025-07-04 12:26:37,240 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:37,242 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 8
+2025-07-04 12:26:43,416 - INFO - Counting catalogs | search='1', status='None'
+2025-07-04 12:26:43,423 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:43,423 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('1', '%1%', '%1%') | Result: {'COUNT(*)': 1}
+2025-07-04 12:26:43,427 - DEBUG - Total catalogs matched: 1
+2025-07-04 12:26:43,427 - INFO - Retrieving all catalogs | search='1', status='None', page=1, per_page=10
+2025-07-04 12:26:43,427 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:43,427 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('1', '%1%', '%1%', 10, 0) | Result count: 1
+2025-07-04 12:26:45,351 - INFO - Counting catalogs | search='', status='None'
+2025-07-04 12:26:45,358 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:45,358 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 8}
+2025-07-04 12:26:45,358 - DEBUG - Total catalogs matched: 8
+2025-07-04 12:26:45,358 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
+2025-07-04 12:26:45,358 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:45,358 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 8
+2025-07-04 12:26:49,491 - INFO - Counting catalogs | search='/', status='None'
+2025-07-04 12:26:49,499 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:49,499 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('/', '%/%', '%/%') | Result: {'COUNT(*)': 0}
+2025-07-04 12:26:49,499 - DEBUG - Total catalogs matched: 0
+2025-07-04 12:26:49,499 - INFO - Retrieving all catalogs | search='/', status='None', page=1, per_page=10
+2025-07-04 12:26:49,509 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:49,509 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('/', '%/%', '%/%', 10, 0) | Result count: 0
+2025-07-04 12:26:51,021 - INFO - Counting catalogs | search='', status='None'
+2025-07-04 12:26:51,026 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:51,026 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 8}
+2025-07-04 12:26:51,026 - DEBUG - Total catalogs matched: 8
+2025-07-04 12:26:51,026 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
+2025-07-04 12:26:51,026 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:51,026 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 8
+2025-07-04 12:26:52,210 - INFO - Counting catalogs | search='2', status='None'
+2025-07-04 12:26:52,213 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:52,213 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('2', '%2%', '%2%') | Result: {'COUNT(*)': 1}
+2025-07-04 12:26:52,213 - DEBUG - Total catalogs matched: 1
+2025-07-04 12:26:52,213 - INFO - Retrieving all catalogs | search='2', status='None', page=1, per_page=10
+2025-07-04 12:26:52,231 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:52,231 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('2', '%2%', '%2%', 10, 0) | Result count: 1
+2025-07-04 12:26:53,660 - INFO - Counting catalogs | search='25', status='None'
+2025-07-04 12:26:53,663 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:53,663 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('25', '%25%', '%25%') | Result: {'COUNT(*)': 1}
+2025-07-04 12:26:53,663 - DEBUG - Total catalogs matched: 1
+2025-07-04 12:26:53,663 - INFO - Retrieving all catalogs | search='25', status='None', page=1, per_page=10
+2025-07-04 12:26:53,676 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:53,677 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('25', '%25%', '%25%', 10, 0) | Result count: 1
+2025-07-04 12:26:55,115 - INFO - Counting catalogs | search='2', status='None'
+2025-07-04 12:26:55,116 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:55,116 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('2', '%2%', '%2%') | Result: {'COUNT(*)': 1}
+2025-07-04 12:26:55,116 - DEBUG - Total catalogs matched: 1
+2025-07-04 12:26:55,116 - INFO - Retrieving all catalogs | search='2', status='None', page=1, per_page=10
+2025-07-04 12:26:55,127 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:55,127 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('2', '%2%', '%2%', 10, 0) | Result count: 1
+2025-07-04 12:26:56,532 - INFO - Counting catalogs | search='', status='None'
+2025-07-04 12:26:56,542 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:56,543 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 8}
+2025-07-04 12:26:56,543 - DEBUG - Total catalogs matched: 8
+2025-07-04 12:26:56,544 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
+2025-07-04 12:26:56,547 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:56,547 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 8
+2025-07-04 12:26:57,383 - INFO - Counting catalogs | search='1', status='None'
+2025-07-04 12:26:57,396 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:57,396 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('1', '%1%', '%1%') | Result: {'COUNT(*)': 1}
+2025-07-04 12:26:57,397 - DEBUG - Total catalogs matched: 1
+2025-07-04 12:26:57,397 - INFO - Retrieving all catalogs | search='1', status='None', page=1, per_page=10
+2025-07-04 12:26:57,397 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:57,397 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('1', '%1%', '%1%', 10, 0) | Result count: 1
+2025-07-04 12:26:57,918 - INFO - Counting catalogs | search='13', status='None'
+2025-07-04 12:26:57,928 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:57,931 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('13', '%13%', '%13%') | Result: {'COUNT(*)': 0}
+2025-07-04 12:26:57,931 - DEBUG - Total catalogs matched: 0
+2025-07-04 12:26:57,931 - INFO - Retrieving all catalogs | search='13', status='None', page=1, per_page=10
+2025-07-04 12:26:57,931 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:57,931 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('13', '%13%', '%13%', 10, 0) | Result count: 0
+2025-07-04 12:26:58,664 - INFO - Counting catalogs | search='136', status='None'
+2025-07-04 12:26:58,668 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:58,678 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('136', '%136%', '%136%') | Result: {'COUNT(*)': 0}
+2025-07-04 12:26:58,678 - DEBUG - Total catalogs matched: 0
+2025-07-04 12:26:58,678 - INFO - Retrieving all catalogs | search='136', status='None', page=1, per_page=10
+2025-07-04 12:26:58,679 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:58,679 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('136', '%136%', '%136%', 10, 0) | Result count: 0
+2025-07-04 12:26:58,848 - INFO - Counting catalogs | search='1366', status='None'
+2025-07-04 12:26:58,855 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:58,855 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('1366', '%1366%', '%1366%') | Result: {'COUNT(*)': 0}
+2025-07-04 12:26:58,855 - DEBUG - Total catalogs matched: 0
+2025-07-04 12:26:58,855 - INFO - Retrieving all catalogs | search='1366', status='None', page=1, per_page=10
+2025-07-04 12:26:58,863 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:58,863 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('1366', '%1366%', '%1366%', 10, 0) | Result count: 0
+2025-07-04 12:26:59,082 - INFO - Counting catalogs | search='13663', status='None'
+2025-07-04 12:26:59,082 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:59,082 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('13663', '%13663%', '%13663%') | Result: {'COUNT(*)': 0}
+2025-07-04 12:26:59,082 - DEBUG - Total catalogs matched: 0
+2025-07-04 12:26:59,082 - INFO - Retrieving all catalogs | search='13663', status='None', page=1, per_page=10
+2025-07-04 12:26:59,096 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:59,096 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('13663', '%13663%', '%13663%', 10, 0) | Result count: 0
+2025-07-04 12:26:59,285 - INFO - Counting catalogs | search='136633', status='None'
+2025-07-04 12:26:59,289 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:59,289 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('136633', '%136633%', '%136633%') | Result: {'COUNT(*)': 0}
+2025-07-04 12:26:59,289 - DEBUG - Total catalogs matched: 0
+2025-07-04 12:26:59,289 - INFO - Retrieving all catalogs | search='136633', status='None', page=1, per_page=10
+2025-07-04 12:26:59,300 - INFO - Counting catalogs | search='1366332', status='None'
+2025-07-04 12:26:59,302 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:59,302 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('136633', '%136633%', '%136633%', 10, 0) | Result count: 0
+2025-07-04 12:26:59,306 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:59,309 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('1366332', '%1366332%', '%1366332%') | Result: {'COUNT(*)': 0}
+2025-07-04 12:26:59,309 - DEBUG - Total catalogs matched: 0
+2025-07-04 12:26:59,309 - INFO - Retrieving all catalogs | search='1366332', status='None', page=1, per_page=10
+2025-07-04 12:26:59,317 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:59,317 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('1366332', '%1366332%', '%1366332%', 10, 0) | Result count: 0
+2025-07-04 12:26:59,504 - INFO - Counting catalogs | search='13663323', status='None'
+2025-07-04 12:26:59,511 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:59,512 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('13663323', '%13663323%', '%13663323%') | Result: {'COUNT(*)': 0}
+2025-07-04 12:26:59,512 - DEBUG - Total catalogs matched: 0
+2025-07-04 12:26:59,512 - INFO - Retrieving all catalogs | search='13663323', status='None', page=1, per_page=10
+2025-07-04 12:26:59,512 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:26:59,512 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('13663323', '%13663323%', '%13663323%', 10, 0) | Result count: 0
+2025-07-04 12:27:00,709 - INFO - Counting catalogs | search='136633233', status='None'
+2025-07-04 12:27:00,716 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:00,716 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('136633233', '%136633233%', '%136633233%') | Result: {'COUNT(*)': 0}
+2025-07-04 12:27:00,716 - DEBUG - Total catalogs matched: 0
+2025-07-04 12:27:00,716 - INFO - Retrieving all catalogs | search='136633233', status='None', page=1, per_page=10
+2025-07-04 12:27:00,728 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:00,728 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('136633233', '%136633233%', '%136633233%', 10, 0) | Result count: 0
+2025-07-04 12:27:00,840 - INFO - Counting catalogs | search='1366332333', status='None'
+2025-07-04 12:27:00,846 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:00,846 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('1366332333', '%1366332333%', '%1366332333%') | Result: {'COUNT(*)': 0}
+2025-07-04 12:27:00,846 - DEBUG - Total catalogs matched: 0
+2025-07-04 12:27:00,846 - INFO - Retrieving all catalogs | search='1366332333', status='None', page=1, per_page=10
+2025-07-04 12:27:00,864 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:00,864 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('1366332333', '%1366332333%', '%1366332333%', 10, 0) | Result count: 0
+2025-07-04 12:27:01,315 - INFO - Counting catalogs | search='136633233', status='None'
+2025-07-04 12:27:01,320 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:01,320 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('136633233', '%136633233%', '%136633233%') | Result: {'COUNT(*)': 0}
+2025-07-04 12:27:01,320 - DEBUG - Total catalogs matched: 0
+2025-07-04 12:27:01,320 - INFO - Retrieving all catalogs | search='136633233', status='None', page=1, per_page=10
+2025-07-04 12:27:01,333 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:01,333 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('136633233', '%136633233%', '%136633233%', 10, 0) | Result count: 0
+2025-07-04 12:27:01,809 - INFO - Counting catalogs | search='13663323', status='None'
+2025-07-04 12:27:01,813 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:01,813 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('13663323', '%13663323%', '%13663323%') | Result: {'COUNT(*)': 0}
+2025-07-04 12:27:01,813 - DEBUG - Total catalogs matched: 0
+2025-07-04 12:27:01,813 - INFO - Retrieving all catalogs | search='13663323', status='None', page=1, per_page=10
+2025-07-04 12:27:01,813 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:01,813 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('13663323', '%13663323%', '%13663323%', 10, 0) | Result count: 0
+2025-07-04 12:27:01,851 - INFO - Counting catalogs | search='1366332', status='None'
+2025-07-04 12:27:01,851 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:01,851 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('1366332', '%1366332%', '%1366332%') | Result: {'COUNT(*)': 0}
+2025-07-04 12:27:01,851 - DEBUG - Total catalogs matched: 0
+2025-07-04 12:27:01,851 - INFO - Retrieving all catalogs | search='1366332', status='None', page=1, per_page=10
+2025-07-04 12:27:01,870 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:01,870 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('1366332', '%1366332%', '%1366332%', 10, 0) | Result count: 0
+2025-07-04 12:27:01,885 - INFO - Counting catalogs | search='136633', status='None'
+2025-07-04 12:27:01,898 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:01,898 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('136633', '%136633%', '%136633%') | Result: {'COUNT(*)': 0}
+2025-07-04 12:27:01,898 - DEBUG - Total catalogs matched: 0
+2025-07-04 12:27:01,898 - INFO - Retrieving all catalogs | search='136633', status='None', page=1, per_page=10
+2025-07-04 12:27:01,905 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:01,905 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('136633', '%136633%', '%136633%', 10, 0) | Result count: 0
+2025-07-04 12:27:01,919 - INFO - Counting catalogs | search='13663', status='None'
+2025-07-04 12:27:01,930 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:01,931 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('13663', '%13663%', '%13663%') | Result: {'COUNT(*)': 0}
+2025-07-04 12:27:01,931 - DEBUG - Total catalogs matched: 0
+2025-07-04 12:27:01,933 - INFO - Retrieving all catalogs | search='13663', status='None', page=1, per_page=10
+2025-07-04 12:27:01,942 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:01,942 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('13663', '%13663%', '%13663%', 10, 0) | Result count: 0
+2025-07-04 12:27:01,954 - INFO - Counting catalogs | search='1366', status='None'
+2025-07-04 12:27:01,964 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:01,965 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('1366', '%1366%', '%1366%') | Result: {'COUNT(*)': 0}
+2025-07-04 12:27:01,965 - DEBUG - Total catalogs matched: 0
+2025-07-04 12:27:01,965 - INFO - Retrieving all catalogs | search='1366', status='None', page=1, per_page=10
+2025-07-04 12:27:01,968 - INFO - Counting catalogs | search='136', status='None'
+2025-07-04 12:27:01,968 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:01,968 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('1366', '%1366%', '%1366%', 10, 0) | Result count: 0
+2025-07-04 12:27:01,981 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:01,981 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('136', '%136%', '%136%') | Result: {'COUNT(*)': 0}
+2025-07-04 12:27:01,981 - DEBUG - Total catalogs matched: 0
+2025-07-04 12:27:01,981 - INFO - Retrieving all catalogs | search='136', status='None', page=1, per_page=10
+2025-07-04 12:27:01,986 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:01,986 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('136', '%136%', '%136%', 10, 0) | Result count: 0
+2025-07-04 12:27:02,017 - INFO - Counting catalogs | search='13', status='None'
+2025-07-04 12:27:02,021 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:02,021 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('13', '%13%', '%13%') | Result: {'COUNT(*)': 0}
+2025-07-04 12:27:02,021 - DEBUG - Total catalogs matched: 0
+2025-07-04 12:27:02,021 - INFO - Retrieving all catalogs | search='13', status='None', page=1, per_page=10
+2025-07-04 12:27:02,033 - INFO - Counting catalogs | search='1', status='None'
+2025-07-04 12:27:02,033 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:02,033 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('13', '%13%', '%13%', 10, 0) | Result count: 0
+2025-07-04 12:27:02,046 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:02,048 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('1', '%1%', '%1%') | Result: {'COUNT(*)': 1}
+2025-07-04 12:27:02,048 - DEBUG - Total catalogs matched: 1
+2025-07-04 12:27:02,048 - INFO - Retrieving all catalogs | search='1', status='None', page=1, per_page=10
+2025-07-04 12:27:02,048 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:02,048 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('1', '%1%', '%1%', 10, 0) | Result count: 1
+2025-07-04 12:27:02,083 - INFO - Counting catalogs | search='', status='None'
+2025-07-04 12:27:02,085 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:02,085 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 8}
+2025-07-04 12:27:02,085 - DEBUG - Total catalogs matched: 8
+2025-07-04 12:27:02,085 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
+2025-07-04 12:27:02,100 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:02,100 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 8
+2025-07-04 12:27:03,247 - INFO - Counting catalogs | search='2', status='None'
+2025-07-04 12:27:03,248 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:03,248 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('2', '%2%', '%2%') | Result: {'COUNT(*)': 1}
+2025-07-04 12:27:03,248 - DEBUG - Total catalogs matched: 1
+2025-07-04 12:27:03,248 - INFO - Retrieving all catalogs | search='2', status='None', page=1, per_page=10
+2025-07-04 12:27:03,248 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:03,263 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('2', '%2%', '%2%', 10, 0) | Result count: 1
+2025-07-04 12:27:03,884 - INFO - Counting catalogs | search='25', status='None'
+2025-07-04 12:27:03,887 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:03,887 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('25', '%25%', '%25%') | Result: {'COUNT(*)': 1}
+2025-07-04 12:27:03,887 - DEBUG - Total catalogs matched: 1
+2025-07-04 12:27:03,887 - INFO - Retrieving all catalogs | search='25', status='None', page=1, per_page=10
+2025-07-04 12:27:03,899 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:03,899 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('25', '%25%', '%25%', 10, 0) | Result count: 1
+2025-07-04 12:27:04,274 - INFO - Counting catalogs | search='251', status='None'
+2025-07-04 12:27:04,283 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:04,284 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('251', '%251%', '%251%') | Result: {'COUNT(*)': 0}
+2025-07-04 12:27:04,284 - DEBUG - Total catalogs matched: 0
+2025-07-04 12:27:04,284 - INFO - Retrieving all catalogs | search='251', status='None', page=1, per_page=10
+2025-07-04 12:27:04,286 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:04,286 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('251', '%251%', '%251%', 10, 0) | Result count: 0
+2025-07-04 12:27:07,646 - INFO - Counting catalogs | search='25', status='None'
+2025-07-04 12:27:07,651 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:07,656 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('25', '%25%', '%25%') | Result: {'COUNT(*)': 1}
+2025-07-04 12:27:07,656 - DEBUG - Total catalogs matched: 1
+2025-07-04 12:27:07,656 - INFO - Retrieving all catalogs | search='25', status='None', page=1, per_page=10
+2025-07-04 12:27:07,668 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:07,668 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('25', '%25%', '%25%', 10, 0) | Result count: 1
+2025-07-04 12:27:08,137 - INFO - Counting catalogs | search='2', status='None'
+2025-07-04 12:27:08,148 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:08,149 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('2', '%2%', '%2%') | Result: {'COUNT(*)': 1}
+2025-07-04 12:27:08,149 - DEBUG - Total catalogs matched: 1
+2025-07-04 12:27:08,149 - INFO - Retrieving all catalogs | search='2', status='None', page=1, per_page=10
+2025-07-04 12:27:08,156 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:08,163 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('2', '%2%', '%2%', 10, 0) | Result count: 1
+2025-07-04 12:27:08,170 - INFO - Counting catalogs | search='', status='None'
+2025-07-04 12:27:08,177 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:08,182 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 8}
+2025-07-04 12:27:08,183 - DEBUG - Total catalogs matched: 8
+2025-07-04 12:27:08,183 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
+2025-07-04 12:27:08,194 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:08,194 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 8
+2025-07-04 12:27:47,754 - INFO - Creating new catalog for user_id=2 with name='Thrift'
+2025-07-04 12:27:47,756 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:47,769 - DEBUG - Executed query with commit: INSERT INTO catalog (catalog_name, catalog_description, start_date, end_date, status, user_id)
+            VALUES (%s, %s, %s, %s, %s, %s) | Params: ('Thrift', 'sale', '2025-07-09', '2025-08-27', 'active', '2') | Result: 29
+2025-07-04 12:27:47,769 - INFO - Catalog created successfully with ID 29
+2025-07-04 12:27:47,774 - INFO - Counting catalogs | search='', status='None'
+2025-07-04 12:27:47,789 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:47,789 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 9}
+2025-07-04 12:27:47,789 - DEBUG - Total catalogs matched: 9
+2025-07-04 12:27:47,789 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
+2025-07-04 12:27:47,798 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:27:47,798 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 9
+2025-07-04 12:28:15,592 - INFO - Creating new catalog for user_id=2 with name='Chickpet Sale'
+2025-07-04 12:28:15,602 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:28:15,614 - DEBUG - Executed query with commit: INSERT INTO catalog (catalog_name, catalog_description, start_date, end_date, status, user_id)
+            VALUES (%s, %s, %s, %s, %s, %s) | Params: ('Chickpet Sale', 'black', '2025-07-18', '2025-08-27', 'active', '2') | Result: 30
+2025-07-04 12:28:15,614 - INFO - Catalog created successfully with ID 30
+2025-07-04 12:28:15,624 - INFO - Counting catalogs | search='', status='None'
+2025-07-04 12:28:15,636 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:28:15,636 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 10}
+2025-07-04 12:28:15,636 - DEBUG - Total catalogs matched: 10
+2025-07-04 12:28:15,636 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
+2025-07-04 12:28:15,642 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:28:15,642 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 10
+2025-07-04 12:28:55,739 - INFO - Creating new catalog for user_id=2 with name='Summer Cold'
+2025-07-04 12:28:55,748 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:28:55,753 - DEBUG - Executed query with commit: INSERT INTO catalog (catalog_name, catalog_description, start_date, end_date, status, user_id)
+            VALUES (%s, %s, %s, %s, %s, %s) | Params: ('Summer Cold', 'thanupp', '2025-07-08', '2025-07-15', 'active', '2') | Result: 31
+2025-07-04 12:28:55,753 - INFO - Catalog created successfully with ID 31
+2025-07-04 12:28:55,766 - INFO - Counting catalogs | search='', status='None'
+2025-07-04 12:28:55,772 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:28:55,777 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 11}
+2025-07-04 12:28:55,777 - DEBUG - Total catalogs matched: 11
+2025-07-04 12:28:55,777 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
+2025-07-04 12:28:55,787 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:28:55,787 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 10
+2025-07-04 12:28:57,433 - INFO - Counting catalogs | search='', status='None'
+2025-07-04 12:28:57,438 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:28:57,438 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 11}
+2025-07-04 12:28:57,438 - DEBUG - Total catalogs matched: 11
+2025-07-04 12:28:57,438 - INFO - Retrieving all catalogs | search='', status='None', page=2, per_page=10
+2025-07-04 12:28:57,438 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:28:57,438 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 10) | Result count: 1
+2025-07-04 12:29:00,990 - INFO - Counting catalogs | search='', status='None'
+2025-07-04 12:29:01,006 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:29:01,006 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 11}
+2025-07-04 12:29:01,006 - DEBUG - Total catalogs matched: 11
+2025-07-04 12:29:01,006 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
+2025-07-04 12:29:01,022 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:29:01,026 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 10
+2025-07-04 12:29:03,732 - INFO - Counting catalogs | search='', status='None'
+2025-07-04 12:29:03,743 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:29:03,743 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 11}
+2025-07-04 12:29:03,743 - DEBUG - Total catalogs matched: 11
+2025-07-04 12:29:03,743 - INFO - Retrieving all catalogs | search='', status='None', page=2, per_page=10
+2025-07-04 12:29:03,743 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:29:03,743 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 10) | Result count: 1
+2025-07-04 12:29:05,356 - INFO - Counting catalogs | search='', status='None'
+2025-07-04 12:29:05,376 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:29:05,376 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 11}
+2025-07-04 12:29:05,376 - DEBUG - Total catalogs matched: 11
+2025-07-04 12:29:05,376 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
+2025-07-04 12:29:05,392 - INFO - Successfully connected to the MySQL database.
+2025-07-04 12:29:05,392 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 10
