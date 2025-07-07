@@ -1,373 +1,737 @@
-2025-07-04 11:41:05,355 - INFO - Attempting to authenticate user: brucy
-2025-07-04 11:41:05,355 - INFO - Attempting to authenticate user: brucy
-2025-07-04 11:41:05,480 - INFO - Successfully connected to the MySQL database.
-2025-07-04 11:41:05,481 - INFO - Successfully connected to the MySQL database.
-2025-07-04 11:41:05,849 - DEBUG - Password check result: True
-2025-07-04 11:41:05,849 - DEBUG - Password check result: True
-2025-07-04 11:41:05,849 - INFO - User 'brucy' authenticated successfully.
-2025-07-04 11:41:05,849 - INFO - User 'brucy' authenticated successfully.
-2025-07-04 11:41:06,128 - INFO - Counting catalogs | search='', status='None'
-2025-07-04 11:41:06,136 - INFO - Successfully connected to the MySQL database.
-2025-07-04 11:41:06,136 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 8}
-2025-07-04 11:41:06,136 - DEBUG - Total catalogs matched: 8
-2025-07-04 11:41:06,136 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
-2025-07-04 11:41:06,145 - INFO - Successfully connected to the MySQL database.
-2025-07-04 11:41:06,148 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 8
-2025-07-04 12:26:02,778 - INFO - Counting catalogs | search='', status='None'
-2025-07-04 12:26:02,856 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:02,857 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 8}
-2025-07-04 12:26:02,857 - DEBUG - Total catalogs matched: 8
-2025-07-04 12:26:02,857 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
-2025-07-04 12:26:02,866 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:02,866 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 8
-2025-07-04 12:26:09,647 - INFO - Counting catalogs | search='', status='None'
-2025-07-04 12:26:09,655 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:09,655 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 8}
-2025-07-04 12:26:09,655 - DEBUG - Total catalogs matched: 8
-2025-07-04 12:26:09,655 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
-2025-07-04 12:26:09,661 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:09,661 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 8
-2025-07-04 12:26:24,614 - INFO - Authenticating user: brucy
-2025-07-04 12:26:24,614 - INFO - Authenticating user: brucy
-2025-07-04 12:26:24,614 - INFO - Fetching user by username: brucy
-2025-07-04 12:26:24,614 - INFO - Fetching user by username: brucy
-2025-07-04 12:26:24,636 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:24,636 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:24,640 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
-2025-07-04 12:26:24,640 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
-2025-07-04 12:26:24,640 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
-2025-07-04 12:26:24,640 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
-2025-07-04 12:26:25,008 - DEBUG - Password check result: True
-2025-07-04 12:26:25,008 - INFO - User 'brucy' authenticated successfully.
-2025-07-04 12:26:25,008 - DEBUG - Password check result: True
-2025-07-04 12:26:25,008 - INFO - User 'brucy' authenticated successfully.
-2025-07-04 12:26:25,307 - INFO - Counting catalogs | search='', status='None'
-2025-07-04 12:26:25,317 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:25,318 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 8}
-2025-07-04 12:26:25,318 - DEBUG - Total catalogs matched: 8
-2025-07-04 12:26:25,318 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
-2025-07-04 12:26:25,328 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:25,328 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 8
-2025-07-04 12:26:29,530 - INFO - Counting catalogs | search='', status='active'
-2025-07-04 12:26:29,541 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:29,541 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND status = %s | Params: ('active',) | Result: {'COUNT(*)': 5}
-2025-07-04 12:26:29,541 - DEBUG - Total catalogs matched: 5
-2025-07-04 12:26:29,541 - INFO - Retrieving all catalogs | search='', status='active', page=1, per_page=10
-2025-07-04 12:26:29,552 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:29,552 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND status = %s ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('active', 10, 0) | Result count: 5
-2025-07-04 12:26:34,034 - INFO - Counting catalogs | search='', status='inactive'
-2025-07-04 12:26:34,043 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:34,044 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND status = %s | Params: ('inactive',) | Result: {'COUNT(*)': 3}
-2025-07-04 12:26:34,045 - DEBUG - Total catalogs matched: 3
-2025-07-04 12:26:34,045 - INFO - Retrieving all catalogs | search='', status='inactive', page=1, per_page=10
-2025-07-04 12:26:34,050 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:34,050 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND status = %s ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('inactive', 10, 0) | Result count: 3
-2025-07-04 12:26:37,215 - INFO - Counting catalogs | search='', status='None'
-2025-07-04 12:26:37,229 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:37,230 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 8}
-2025-07-04 12:26:37,230 - DEBUG - Total catalogs matched: 8
-2025-07-04 12:26:37,230 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
-2025-07-04 12:26:37,240 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:37,242 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 8
-2025-07-04 12:26:43,416 - INFO - Counting catalogs | search='1', status='None'
-2025-07-04 12:26:43,423 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:43,423 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('1', '%1%', '%1%') | Result: {'COUNT(*)': 1}
-2025-07-04 12:26:43,427 - DEBUG - Total catalogs matched: 1
-2025-07-04 12:26:43,427 - INFO - Retrieving all catalogs | search='1', status='None', page=1, per_page=10
-2025-07-04 12:26:43,427 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:43,427 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('1', '%1%', '%1%', 10, 0) | Result count: 1
-2025-07-04 12:26:45,351 - INFO - Counting catalogs | search='', status='None'
-2025-07-04 12:26:45,358 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:45,358 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 8}
-2025-07-04 12:26:45,358 - DEBUG - Total catalogs matched: 8
-2025-07-04 12:26:45,358 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
-2025-07-04 12:26:45,358 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:45,358 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 8
-2025-07-04 12:26:49,491 - INFO - Counting catalogs | search='/', status='None'
-2025-07-04 12:26:49,499 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:49,499 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('/', '%/%', '%/%') | Result: {'COUNT(*)': 0}
-2025-07-04 12:26:49,499 - DEBUG - Total catalogs matched: 0
-2025-07-04 12:26:49,499 - INFO - Retrieving all catalogs | search='/', status='None', page=1, per_page=10
-2025-07-04 12:26:49,509 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:49,509 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('/', '%/%', '%/%', 10, 0) | Result count: 0
-2025-07-04 12:26:51,021 - INFO - Counting catalogs | search='', status='None'
-2025-07-04 12:26:51,026 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:51,026 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 8}
-2025-07-04 12:26:51,026 - DEBUG - Total catalogs matched: 8
-2025-07-04 12:26:51,026 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
-2025-07-04 12:26:51,026 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:51,026 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 8
-2025-07-04 12:26:52,210 - INFO - Counting catalogs | search='2', status='None'
-2025-07-04 12:26:52,213 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:52,213 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('2', '%2%', '%2%') | Result: {'COUNT(*)': 1}
-2025-07-04 12:26:52,213 - DEBUG - Total catalogs matched: 1
-2025-07-04 12:26:52,213 - INFO - Retrieving all catalogs | search='2', status='None', page=1, per_page=10
-2025-07-04 12:26:52,231 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:52,231 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('2', '%2%', '%2%', 10, 0) | Result count: 1
-2025-07-04 12:26:53,660 - INFO - Counting catalogs | search='25', status='None'
-2025-07-04 12:26:53,663 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:53,663 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('25', '%25%', '%25%') | Result: {'COUNT(*)': 1}
-2025-07-04 12:26:53,663 - DEBUG - Total catalogs matched: 1
-2025-07-04 12:26:53,663 - INFO - Retrieving all catalogs | search='25', status='None', page=1, per_page=10
-2025-07-04 12:26:53,676 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:53,677 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('25', '%25%', '%25%', 10, 0) | Result count: 1
-2025-07-04 12:26:55,115 - INFO - Counting catalogs | search='2', status='None'
-2025-07-04 12:26:55,116 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:55,116 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('2', '%2%', '%2%') | Result: {'COUNT(*)': 1}
-2025-07-04 12:26:55,116 - DEBUG - Total catalogs matched: 1
-2025-07-04 12:26:55,116 - INFO - Retrieving all catalogs | search='2', status='None', page=1, per_page=10
-2025-07-04 12:26:55,127 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:55,127 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('2', '%2%', '%2%', 10, 0) | Result count: 1
-2025-07-04 12:26:56,532 - INFO - Counting catalogs | search='', status='None'
-2025-07-04 12:26:56,542 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:56,543 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 8}
-2025-07-04 12:26:56,543 - DEBUG - Total catalogs matched: 8
-2025-07-04 12:26:56,544 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
-2025-07-04 12:26:56,547 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:56,547 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 8
-2025-07-04 12:26:57,383 - INFO - Counting catalogs | search='1', status='None'
-2025-07-04 12:26:57,396 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:57,396 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('1', '%1%', '%1%') | Result: {'COUNT(*)': 1}
-2025-07-04 12:26:57,397 - DEBUG - Total catalogs matched: 1
-2025-07-04 12:26:57,397 - INFO - Retrieving all catalogs | search='1', status='None', page=1, per_page=10
-2025-07-04 12:26:57,397 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:57,397 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('1', '%1%', '%1%', 10, 0) | Result count: 1
-2025-07-04 12:26:57,918 - INFO - Counting catalogs | search='13', status='None'
-2025-07-04 12:26:57,928 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:57,931 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('13', '%13%', '%13%') | Result: {'COUNT(*)': 0}
-2025-07-04 12:26:57,931 - DEBUG - Total catalogs matched: 0
-2025-07-04 12:26:57,931 - INFO - Retrieving all catalogs | search='13', status='None', page=1, per_page=10
-2025-07-04 12:26:57,931 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:57,931 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('13', '%13%', '%13%', 10, 0) | Result count: 0
-2025-07-04 12:26:58,664 - INFO - Counting catalogs | search='136', status='None'
-2025-07-04 12:26:58,668 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:58,678 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('136', '%136%', '%136%') | Result: {'COUNT(*)': 0}
-2025-07-04 12:26:58,678 - DEBUG - Total catalogs matched: 0
-2025-07-04 12:26:58,678 - INFO - Retrieving all catalogs | search='136', status='None', page=1, per_page=10
-2025-07-04 12:26:58,679 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:58,679 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('136', '%136%', '%136%', 10, 0) | Result count: 0
-2025-07-04 12:26:58,848 - INFO - Counting catalogs | search='1366', status='None'
-2025-07-04 12:26:58,855 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:58,855 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('1366', '%1366%', '%1366%') | Result: {'COUNT(*)': 0}
-2025-07-04 12:26:58,855 - DEBUG - Total catalogs matched: 0
-2025-07-04 12:26:58,855 - INFO - Retrieving all catalogs | search='1366', status='None', page=1, per_page=10
-2025-07-04 12:26:58,863 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:58,863 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('1366', '%1366%', '%1366%', 10, 0) | Result count: 0
-2025-07-04 12:26:59,082 - INFO - Counting catalogs | search='13663', status='None'
-2025-07-04 12:26:59,082 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:59,082 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('13663', '%13663%', '%13663%') | Result: {'COUNT(*)': 0}
-2025-07-04 12:26:59,082 - DEBUG - Total catalogs matched: 0
-2025-07-04 12:26:59,082 - INFO - Retrieving all catalogs | search='13663', status='None', page=1, per_page=10
-2025-07-04 12:26:59,096 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:59,096 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('13663', '%13663%', '%13663%', 10, 0) | Result count: 0
-2025-07-04 12:26:59,285 - INFO - Counting catalogs | search='136633', status='None'
-2025-07-04 12:26:59,289 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:59,289 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('136633', '%136633%', '%136633%') | Result: {'COUNT(*)': 0}
-2025-07-04 12:26:59,289 - DEBUG - Total catalogs matched: 0
-2025-07-04 12:26:59,289 - INFO - Retrieving all catalogs | search='136633', status='None', page=1, per_page=10
-2025-07-04 12:26:59,300 - INFO - Counting catalogs | search='1366332', status='None'
-2025-07-04 12:26:59,302 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:59,302 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('136633', '%136633%', '%136633%', 10, 0) | Result count: 0
-2025-07-04 12:26:59,306 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:59,309 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('1366332', '%1366332%', '%1366332%') | Result: {'COUNT(*)': 0}
-2025-07-04 12:26:59,309 - DEBUG - Total catalogs matched: 0
-2025-07-04 12:26:59,309 - INFO - Retrieving all catalogs | search='1366332', status='None', page=1, per_page=10
-2025-07-04 12:26:59,317 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:59,317 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('1366332', '%1366332%', '%1366332%', 10, 0) | Result count: 0
-2025-07-04 12:26:59,504 - INFO - Counting catalogs | search='13663323', status='None'
-2025-07-04 12:26:59,511 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:59,512 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('13663323', '%13663323%', '%13663323%') | Result: {'COUNT(*)': 0}
-2025-07-04 12:26:59,512 - DEBUG - Total catalogs matched: 0
-2025-07-04 12:26:59,512 - INFO - Retrieving all catalogs | search='13663323', status='None', page=1, per_page=10
-2025-07-04 12:26:59,512 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:26:59,512 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('13663323', '%13663323%', '%13663323%', 10, 0) | Result count: 0
-2025-07-04 12:27:00,709 - INFO - Counting catalogs | search='136633233', status='None'
-2025-07-04 12:27:00,716 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:00,716 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('136633233', '%136633233%', '%136633233%') | Result: {'COUNT(*)': 0}
-2025-07-04 12:27:00,716 - DEBUG - Total catalogs matched: 0
-2025-07-04 12:27:00,716 - INFO - Retrieving all catalogs | search='136633233', status='None', page=1, per_page=10
-2025-07-04 12:27:00,728 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:00,728 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('136633233', '%136633233%', '%136633233%', 10, 0) | Result count: 0
-2025-07-04 12:27:00,840 - INFO - Counting catalogs | search='1366332333', status='None'
-2025-07-04 12:27:00,846 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:00,846 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('1366332333', '%1366332333%', '%1366332333%') | Result: {'COUNT(*)': 0}
-2025-07-04 12:27:00,846 - DEBUG - Total catalogs matched: 0
-2025-07-04 12:27:00,846 - INFO - Retrieving all catalogs | search='1366332333', status='None', page=1, per_page=10
-2025-07-04 12:27:00,864 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:00,864 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('1366332333', '%1366332333%', '%1366332333%', 10, 0) | Result count: 0
-2025-07-04 12:27:01,315 - INFO - Counting catalogs | search='136633233', status='None'
-2025-07-04 12:27:01,320 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:01,320 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('136633233', '%136633233%', '%136633233%') | Result: {'COUNT(*)': 0}
-2025-07-04 12:27:01,320 - DEBUG - Total catalogs matched: 0
-2025-07-04 12:27:01,320 - INFO - Retrieving all catalogs | search='136633233', status='None', page=1, per_page=10
-2025-07-04 12:27:01,333 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:01,333 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('136633233', '%136633233%', '%136633233%', 10, 0) | Result count: 0
-2025-07-04 12:27:01,809 - INFO - Counting catalogs | search='13663323', status='None'
-2025-07-04 12:27:01,813 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:01,813 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('13663323', '%13663323%', '%13663323%') | Result: {'COUNT(*)': 0}
-2025-07-04 12:27:01,813 - DEBUG - Total catalogs matched: 0
-2025-07-04 12:27:01,813 - INFO - Retrieving all catalogs | search='13663323', status='None', page=1, per_page=10
-2025-07-04 12:27:01,813 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:01,813 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('13663323', '%13663323%', '%13663323%', 10, 0) | Result count: 0
-2025-07-04 12:27:01,851 - INFO - Counting catalogs | search='1366332', status='None'
-2025-07-04 12:27:01,851 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:01,851 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('1366332', '%1366332%', '%1366332%') | Result: {'COUNT(*)': 0}
-2025-07-04 12:27:01,851 - DEBUG - Total catalogs matched: 0
-2025-07-04 12:27:01,851 - INFO - Retrieving all catalogs | search='1366332', status='None', page=1, per_page=10
-2025-07-04 12:27:01,870 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:01,870 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('1366332', '%1366332%', '%1366332%', 10, 0) | Result count: 0
-2025-07-04 12:27:01,885 - INFO - Counting catalogs | search='136633', status='None'
-2025-07-04 12:27:01,898 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:01,898 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('136633', '%136633%', '%136633%') | Result: {'COUNT(*)': 0}
-2025-07-04 12:27:01,898 - DEBUG - Total catalogs matched: 0
-2025-07-04 12:27:01,898 - INFO - Retrieving all catalogs | search='136633', status='None', page=1, per_page=10
-2025-07-04 12:27:01,905 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:01,905 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('136633', '%136633%', '%136633%', 10, 0) | Result count: 0
-2025-07-04 12:27:01,919 - INFO - Counting catalogs | search='13663', status='None'
-2025-07-04 12:27:01,930 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:01,931 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('13663', '%13663%', '%13663%') | Result: {'COUNT(*)': 0}
-2025-07-04 12:27:01,931 - DEBUG - Total catalogs matched: 0
-2025-07-04 12:27:01,933 - INFO - Retrieving all catalogs | search='13663', status='None', page=1, per_page=10
-2025-07-04 12:27:01,942 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:01,942 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('13663', '%13663%', '%13663%', 10, 0) | Result count: 0
-2025-07-04 12:27:01,954 - INFO - Counting catalogs | search='1366', status='None'
-2025-07-04 12:27:01,964 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:01,965 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('1366', '%1366%', '%1366%') | Result: {'COUNT(*)': 0}
-2025-07-04 12:27:01,965 - DEBUG - Total catalogs matched: 0
-2025-07-04 12:27:01,965 - INFO - Retrieving all catalogs | search='1366', status='None', page=1, per_page=10
-2025-07-04 12:27:01,968 - INFO - Counting catalogs | search='136', status='None'
-2025-07-04 12:27:01,968 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:01,968 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('1366', '%1366%', '%1366%', 10, 0) | Result count: 0
-2025-07-04 12:27:01,981 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:01,981 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('136', '%136%', '%136%') | Result: {'COUNT(*)': 0}
-2025-07-04 12:27:01,981 - DEBUG - Total catalogs matched: 0
-2025-07-04 12:27:01,981 - INFO - Retrieving all catalogs | search='136', status='None', page=1, per_page=10
-2025-07-04 12:27:01,986 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:01,986 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('136', '%136%', '%136%', 10, 0) | Result count: 0
-2025-07-04 12:27:02,017 - INFO - Counting catalogs | search='13', status='None'
-2025-07-04 12:27:02,021 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:02,021 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('13', '%13%', '%13%') | Result: {'COUNT(*)': 0}
-2025-07-04 12:27:02,021 - DEBUG - Total catalogs matched: 0
-2025-07-04 12:27:02,021 - INFO - Retrieving all catalogs | search='13', status='None', page=1, per_page=10
-2025-07-04 12:27:02,033 - INFO - Counting catalogs | search='1', status='None'
-2025-07-04 12:27:02,033 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:02,033 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('13', '%13%', '%13%', 10, 0) | Result count: 0
-2025-07-04 12:27:02,046 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:02,048 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('1', '%1%', '%1%') | Result: {'COUNT(*)': 1}
-2025-07-04 12:27:02,048 - DEBUG - Total catalogs matched: 1
-2025-07-04 12:27:02,048 - INFO - Retrieving all catalogs | search='1', status='None', page=1, per_page=10
-2025-07-04 12:27:02,048 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:02,048 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('1', '%1%', '%1%', 10, 0) | Result count: 1
-2025-07-04 12:27:02,083 - INFO - Counting catalogs | search='', status='None'
-2025-07-04 12:27:02,085 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:02,085 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 8}
-2025-07-04 12:27:02,085 - DEBUG - Total catalogs matched: 8
-2025-07-04 12:27:02,085 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
-2025-07-04 12:27:02,100 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:02,100 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 8
-2025-07-04 12:27:03,247 - INFO - Counting catalogs | search='2', status='None'
-2025-07-04 12:27:03,248 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:03,248 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('2', '%2%', '%2%') | Result: {'COUNT(*)': 1}
-2025-07-04 12:27:03,248 - DEBUG - Total catalogs matched: 1
-2025-07-04 12:27:03,248 - INFO - Retrieving all catalogs | search='2', status='None', page=1, per_page=10
-2025-07-04 12:27:03,248 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:03,263 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('2', '%2%', '%2%', 10, 0) | Result count: 1
-2025-07-04 12:27:03,884 - INFO - Counting catalogs | search='25', status='None'
-2025-07-04 12:27:03,887 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:03,887 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('25', '%25%', '%25%') | Result: {'COUNT(*)': 1}
-2025-07-04 12:27:03,887 - DEBUG - Total catalogs matched: 1
-2025-07-04 12:27:03,887 - INFO - Retrieving all catalogs | search='25', status='None', page=1, per_page=10
-2025-07-04 12:27:03,899 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:03,899 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('25', '%25%', '%25%', 10, 0) | Result count: 1
-2025-07-04 12:27:04,274 - INFO - Counting catalogs | search='251', status='None'
-2025-07-04 12:27:04,283 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:04,284 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('251', '%251%', '%251%') | Result: {'COUNT(*)': 0}
-2025-07-04 12:27:04,284 - DEBUG - Total catalogs matched: 0
-2025-07-04 12:27:04,284 - INFO - Retrieving all catalogs | search='251', status='None', page=1, per_page=10
-2025-07-04 12:27:04,286 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:04,286 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('251', '%251%', '%251%', 10, 0) | Result count: 0
-2025-07-04 12:27:07,646 - INFO - Counting catalogs | search='25', status='None'
-2025-07-04 12:27:07,651 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:07,656 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('25', '%25%', '%25%') | Result: {'COUNT(*)': 1}
-2025-07-04 12:27:07,656 - DEBUG - Total catalogs matched: 1
-2025-07-04 12:27:07,656 - INFO - Retrieving all catalogs | search='25', status='None', page=1, per_page=10
-2025-07-04 12:27:07,668 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:07,668 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('25', '%25%', '%25%', 10, 0) | Result count: 1
-2025-07-04 12:27:08,137 - INFO - Counting catalogs | search='2', status='None'
-2025-07-04 12:27:08,148 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:08,149 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) | Params: ('2', '%2%', '%2%') | Result: {'COUNT(*)': 1}
-2025-07-04 12:27:08,149 - DEBUG - Total catalogs matched: 1
-2025-07-04 12:27:08,149 - INFO - Retrieving all catalogs | search='2', status='None', page=1, per_page=10
-2025-07-04 12:27:08,156 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:08,163 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('2', '%2%', '%2%', 10, 0) | Result count: 1
-2025-07-04 12:27:08,170 - INFO - Counting catalogs | search='', status='None'
-2025-07-04 12:27:08,177 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:08,182 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 8}
-2025-07-04 12:27:08,183 - DEBUG - Total catalogs matched: 8
-2025-07-04 12:27:08,183 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
-2025-07-04 12:27:08,194 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:08,194 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 8
-2025-07-04 12:27:47,754 - INFO - Creating new catalog for user_id=2 with name='Thrift'
-2025-07-04 12:27:47,756 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:47,769 - DEBUG - Executed query with commit: INSERT INTO catalog (catalog_name, catalog_description, start_date, end_date, status, user_id)
-            VALUES (%s, %s, %s, %s, %s, %s) | Params: ('Thrift', 'sale', '2025-07-09', '2025-08-27', 'active', '2') | Result: 29
-2025-07-04 12:27:47,769 - INFO - Catalog created successfully with ID 29
-2025-07-04 12:27:47,774 - INFO - Counting catalogs | search='', status='None'
-2025-07-04 12:27:47,789 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:47,789 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 9}
-2025-07-04 12:27:47,789 - DEBUG - Total catalogs matched: 9
-2025-07-04 12:27:47,789 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
-2025-07-04 12:27:47,798 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:27:47,798 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 9
-2025-07-04 12:28:15,592 - INFO - Creating new catalog for user_id=2 with name='Chickpet Sale'
-2025-07-04 12:28:15,602 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:28:15,614 - DEBUG - Executed query with commit: INSERT INTO catalog (catalog_name, catalog_description, start_date, end_date, status, user_id)
-            VALUES (%s, %s, %s, %s, %s, %s) | Params: ('Chickpet Sale', 'black', '2025-07-18', '2025-08-27', 'active', '2') | Result: 30
-2025-07-04 12:28:15,614 - INFO - Catalog created successfully with ID 30
-2025-07-04 12:28:15,624 - INFO - Counting catalogs | search='', status='None'
-2025-07-04 12:28:15,636 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:28:15,636 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 10}
-2025-07-04 12:28:15,636 - DEBUG - Total catalogs matched: 10
-2025-07-04 12:28:15,636 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
-2025-07-04 12:28:15,642 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:28:15,642 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 10
-2025-07-04 12:28:55,739 - INFO - Creating new catalog for user_id=2 with name='Summer Cold'
-2025-07-04 12:28:55,748 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:28:55,753 - DEBUG - Executed query with commit: INSERT INTO catalog (catalog_name, catalog_description, start_date, end_date, status, user_id)
-            VALUES (%s, %s, %s, %s, %s, %s) | Params: ('Summer Cold', 'thanupp', '2025-07-08', '2025-07-15', 'active', '2') | Result: 31
-2025-07-04 12:28:55,753 - INFO - Catalog created successfully with ID 31
-2025-07-04 12:28:55,766 - INFO - Counting catalogs | search='', status='None'
-2025-07-04 12:28:55,772 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:28:55,777 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 11}
-2025-07-04 12:28:55,777 - DEBUG - Total catalogs matched: 11
-2025-07-04 12:28:55,777 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
-2025-07-04 12:28:55,787 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:28:55,787 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 10
-2025-07-04 12:28:57,433 - INFO - Counting catalogs | search='', status='None'
-2025-07-04 12:28:57,438 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:28:57,438 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 11}
-2025-07-04 12:28:57,438 - DEBUG - Total catalogs matched: 11
-2025-07-04 12:28:57,438 - INFO - Retrieving all catalogs | search='', status='None', page=2, per_page=10
-2025-07-04 12:28:57,438 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:28:57,438 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 10) | Result count: 1
-2025-07-04 12:29:00,990 - INFO - Counting catalogs | search='', status='None'
-2025-07-04 12:29:01,006 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:29:01,006 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 11}
-2025-07-04 12:29:01,006 - DEBUG - Total catalogs matched: 11
-2025-07-04 12:29:01,006 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
-2025-07-04 12:29:01,022 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:29:01,026 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 10
-2025-07-04 12:29:03,732 - INFO - Counting catalogs | search='', status='None'
-2025-07-04 12:29:03,743 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:29:03,743 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 11}
-2025-07-04 12:29:03,743 - DEBUG - Total catalogs matched: 11
-2025-07-04 12:29:03,743 - INFO - Retrieving all catalogs | search='', status='None', page=2, per_page=10
-2025-07-04 12:29:03,743 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:29:03,743 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 10) | Result count: 1
-2025-07-04 12:29:05,356 - INFO - Counting catalogs | search='', status='None'
-2025-07-04 12:29:05,376 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:29:05,376 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 11}
-2025-07-04 12:29:05,376 - DEBUG - Total catalogs matched: 11
-2025-07-04 12:29:05,376 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
-2025-07-04 12:29:05,392 - INFO - Successfully connected to the MySQL database.
-2025-07-04 12:29:05,392 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 10
+2025-07-07 10:54:36,503 - INFO - Creating new catalog for user_id=1 with name='Test Catalog'
+2025-07-07 10:54:36,503 - DEBUG - Executed query with commit: INSERT INTO catalog (catalog_name, catalog_description, start_date, end_date, status, user_id)
+            VALUES (%s, %s, %s, %s, %s, %s) | Params: ('Test Catalog', 'Test Description', '2025-01-01', '2025-12-31', 'active', 1) | Result: 42
+2025-07-07 10:54:36,503 - INFO - Catalog created successfully with ID 42
+2025-07-07 10:54:36,503 - INFO - Fetching catalog with ID 1
+2025-07-07 10:54:36,503 - DEBUG - Executed query (fetch_one): SELECT * FROM catalog WHERE catalog_id = %s | Params: (1,) | Result: {'catalog_id': 1, 'catalog_name': 'Test', 'catalog_description': 'Desc', 'start_date': '2025-01-01', 'end_date': '2025-12-31', 'status': 'active', 'user_id': 1}
+2025-07-07 10:54:36,512 - INFO - Fetching catalog with ID 99
+2025-07-07 10:54:36,514 - DEBUG - Executed query (fetch_one): SELECT * FROM catalog WHERE catalog_id = %s | Params: (99,) | Result: None
+2025-07-07 10:54:36,516 - WARNING - Catalog with ID 99 not found.
+2025-07-07 10:54:36,519 - INFO - Retrieving all catalogs | search='Test', status='active', page=1, per_page=10
+2025-07-07 10:54:36,520 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) AND status = %s ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('Test', '%Test%', '%Test%', 'active', 10, 0) | Result count: 2
+2025-07-07 10:54:36,521 - INFO - Counting catalogs | search='Test', status='active'
+2025-07-07 10:54:36,525 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) AND status = %s | Params: ('Test', '%Test%', '%Test%', 'active') | Result: {'COUNT(*)': 5}
+2025-07-07 10:54:36,525 - DEBUG - Total catalogs matched: 5
+2025-07-07 10:54:36,529 - INFO - Updating catalog ID 1
+2025-07-07 10:54:36,529 - INFO - Fetching catalog with ID 1
+2025-07-07 10:54:36,529 - DEBUG - Executed query (fetch_one): SELECT * FROM catalog WHERE catalog_id = %s | Params: (1,) | Result: {'catalog_id': 1}
+2025-07-07 10:54:36,529 - DEBUG - Executed query with commit: UPDATE catalog
+            SET catalog_name = %s, catalog_description = %s,
+                start_date = %s, end_date = %s, status = %s
+            WHERE catalog_id = %s | Params: ('Test Catalog', 'Test Description', '2025-01-01', '2025-12-31', 'active', 1) | Result: 1
+2025-07-07 10:54:36,529 - INFO - Catalog ID 1 updated successfully.
+2025-07-07 10:54:36,529 - INFO - Updating catalog ID 1
+2025-07-07 10:54:36,534 - DEBUG - Executed query with commit: UPDATE catalog
+            SET catalog_name = %s, catalog_description = %s,
+                start_date = %s, end_date = %s, status = %s
+            WHERE catalog_id = %s | Params: ('Test Catalog', 'Test Description', '2025-01-01', '2025-12-31', 'active', 1) | Result: 0
+2025-07-07 10:54:36,534 - WARNING - No rows updated for catalog ID 1
+2025-07-07 10:54:36,539 - INFO - Deleting catalog ID 1
+2025-07-07 10:54:36,541 - DEBUG - Executed query with commit: DELETE FROM catalog WHERE catalog_id = %s | Params: (1,) | Result: 1
+2025-07-07 10:54:36,541 - INFO - Catalog ID 1 deleted successfully.
+2025-07-07 10:54:36,546 - INFO - Deleting catalog ID 1
+2025-07-07 10:54:36,546 - DEBUG - Executed query with commit: DELETE FROM catalog WHERE catalog_id = %s | Params: (1,) | Result: 0
+2025-07-07 10:54:36,546 - WARNING - No rows deleted for catalog ID 1
+2025-07-07 11:00:55,556 - INFO - Fetching user by username: navin
+2025-07-07 11:00:55,556 - DEBUG - User found: {'user_id': 1, 'username': 'navin', 'email': 'navin@example.com', 'password_hash': 'hashed_password', 'created_at': '2025-07-07 10:00:00'}
+2025-07-07 11:00:55,559 - INFO - Fetching user by username: unknown
+2025-07-07 11:00:55,559 - WARNING - No user found with username: unknown
+2025-07-07 11:00:55,562 - INFO - Fetching user by email: navin@example.com
+2025-07-07 11:00:55,562 - DEBUG - User found: {'user_id': 1, 'username': 'navin', 'email': 'navin@example.com', 'password_hash': 'hashed_password', 'created_at': '2025-07-07 10:00:00'}
+2025-07-07 11:00:55,562 - INFO - Fetching user by email: unknown@example.com
+2025-07-07 11:00:55,562 - WARNING - No user found with email: unknown@example.com
+2025-07-07 11:00:55,568 - INFO - Fetching user by ID: 1
+2025-07-07 11:00:55,571 - INFO - Fetching user by ID: 999
+2025-07-07 11:00:55,571 - INFO - Creating new user: navin
+2025-07-07 11:00:55,571 - INFO - User created successfully with ID 5
+2025-07-07 11:06:01,311 - DEBUG - Password hashed successfully.
+2025-07-07 11:06:01,321 - WARNING - Invalid password input for hashing.
+2025-07-07 11:06:01,323 - WARNING - Invalid password input for hashing.
+2025-07-07 11:06:01,326 - WARNING - Invalid password input for hashing.
+2025-07-07 11:06:01,585 - DEBUG - Password hashed successfully.
+2025-07-07 11:06:01,822 - DEBUG - Password check result: True
+2025-07-07 11:06:02,049 - DEBUG - Password hashed successfully.
+2025-07-07 11:06:02,272 - DEBUG - Password check result: False
+2025-07-07 11:06:02,275 - ERROR - Invalid bcrypt hash format provided.
+Traceback (most recent call last):
+  File "C:\Users\nxvin\OneDrive\Desktop\Catalog_Manager - Navin\service\authentication_service.py", line 39, in check_password
+    result = bcrypt.checkpw(password.encode('utf-8'), hashed_password.encode('utf-8'))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Invalid salt
+2025-07-07 11:06:02,495 - ERROR - Invalid bcrypt hash format provided.
+Traceback (most recent call last):
+  File "C:\Users\nxvin\OneDrive\Desktop\Catalog_Manager - Navin\service\authentication_service.py", line 39, in check_password
+    result = bcrypt.checkpw(password.encode('utf-8'), hashed_password.encode('utf-8'))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Invalid salt
+2025-07-07 11:06:02,508 - ERROR - Invalid bcrypt hash format provided.
+Traceback (most recent call last):
+  File "C:\Users\nxvin\OneDrive\Desktop\Catalog_Manager - Navin\service\authentication_service.py", line 39, in check_password
+    result = bcrypt.checkpw(password.encode('utf-8'), hashed_password.encode('utf-8'))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Invalid salt
+2025-07-07 11:06:02,524 - ERROR - Invalid bcrypt hash format provided.
+Traceback (most recent call last):
+  File "C:\Users\nxvin\OneDrive\Desktop\Catalog_Manager - Navin\service\authentication_service.py", line 39, in check_password
+    result = bcrypt.checkpw(password.encode('utf-8'), hashed_password.encode('utf-8'))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Invalid salt
+2025-07-07 11:06:02,561 - ERROR - Invalid bcrypt hash format provided.
+Traceback (most recent call last):
+  File "C:\Users\nxvin\OneDrive\Desktop\Catalog_Manager - Navin\service\authentication_service.py", line 39, in check_password
+    result = bcrypt.checkpw(password.encode('utf-8'), hashed_password.encode('utf-8'))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Invalid salt
+2025-07-07 11:06:02,782 - DEBUG - Password hashed successfully.
+2025-07-07 11:06:02,786 - INFO - Authenticating user: testuser
+2025-07-07 11:06:03,000 - DEBUG - Password check result: True
+2025-07-07 11:06:03,000 - INFO - User 'testuser' authenticated successfully.
+2025-07-07 11:06:03,223 - DEBUG - Password hashed successfully.
+2025-07-07 11:06:03,223 - INFO - Authenticating user: test@example.com
+2025-07-07 11:06:03,439 - DEBUG - Password check result: True
+2025-07-07 11:06:03,439 - INFO - User 'test@example.com' authenticated successfully.
+2025-07-07 11:06:03,445 - WARNING - Missing username/email or password during authentication.
+2025-07-07 11:06:03,450 - WARNING - Missing username/email or password during authentication.
+2025-07-07 11:06:03,450 - WARNING - Missing username/email or password during authentication.
+2025-07-07 11:06:03,450 - WARNING - Missing username/email or password during authentication.
+2025-07-07 11:06:03,456 - WARNING - Missing username/email or password during authentication.
+2025-07-07 11:06:03,457 - WARNING - Missing username/email or password during authentication.
+2025-07-07 11:06:03,459 - INFO - Authenticating user: unknownuser
+2025-07-07 11:06:03,459 - WARNING - User 'unknownuser' not found.
+2025-07-07 11:06:03,688 - DEBUG - Password hashed successfully.
+2025-07-07 11:06:03,689 - INFO - Authenticating user: user1
+2025-07-07 11:06:03,907 - DEBUG - Password check result: False
+2025-07-07 11:06:03,907 - WARNING - Incorrect password for user 'user1'.
+2025-07-07 11:06:03,911 - INFO - Authenticating user: user1
+2025-07-07 11:06:03,911 - CRITICAL - Database error during authentication: DB down
+Traceback (most recent call last):
+  File "C:\Users\nxvin\OneDrive\Desktop\Catalog_Manager - Navin\service\authentication_service.py", line 62, in authenticate_user
+    user = self.user_service.get_user_by_username(username_or_email) or \
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+exception.catalog_exception.DatabaseConnectionError: DB down
+2025-07-07 11:06:03,916 - INFO - Authenticating user: user1
+2025-07-07 11:06:03,916 - ERROR - Unexpected error during authentication: Unexpected
+Traceback (most recent call last):
+  File "C:\Users\nxvin\OneDrive\Desktop\Catalog_Manager - Navin\service\authentication_service.py", line 62, in authenticate_user
+    user = self.user_service.get_user_by_username(username_or_email) or \
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Unexpected
+2025-07-07 11:08:36,685 - DEBUG - Password hashed successfully.
+2025-07-07 11:08:36,971 - WARNING - Invalid password input for hashing.
+2025-07-07 11:08:36,971 - WARNING - Invalid password input for hashing.
+2025-07-07 11:08:36,975 - WARNING - Invalid password input for hashing.
+2025-07-07 11:08:37,453 - DEBUG - Password check result: True
+2025-07-07 11:08:37,680 - DEBUG - Password check result: False
+2025-07-07 11:08:37,687 - ERROR - Invalid bcrypt hash format provided.
+Traceback (most recent call last):
+  File "C:\Users\nxvin\OneDrive\Desktop\Catalog_Manager - Navin\service\authentication_service.py", line 39, in check_password
+    result = bcrypt.checkpw(password.encode('utf-8'), hashed_password.encode('utf-8'))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Invalid salt
+2025-07-07 11:08:37,691 - ERROR - Invalid bcrypt hash format provided.
+Traceback (most recent call last):
+  File "C:\Users\nxvin\OneDrive\Desktop\Catalog_Manager - Navin\service\authentication_service.py", line 39, in check_password
+    result = bcrypt.checkpw(password.encode('utf-8'), hashed_password.encode('utf-8'))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Invalid salt
+2025-07-07 11:08:38,083 - WARNING - Missing username/email or password during authentication.
+2025-07-07 11:08:38,090 - WARNING - Missing username/email or password during authentication.
+2025-07-07 11:10:34,471 - DEBUG - Password hashed successfully.
+2025-07-07 11:10:34,731 - WARNING - Invalid password input for hashing.
+2025-07-07 11:10:34,734 - WARNING - Invalid password input for hashing.
+2025-07-07 11:10:34,737 - WARNING - Invalid password input for hashing.
+2025-07-07 11:10:35,192 - DEBUG - Password check result: True
+2025-07-07 11:10:35,412 - DEBUG - Password check result: False
+2025-07-07 11:10:35,424 - ERROR - Invalid bcrypt hash format provided.
+Traceback (most recent call last):
+  File "C:\Users\nxvin\OneDrive\Desktop\Catalog_Manager - Navin\service\authentication_service.py", line 39, in check_password
+    result = bcrypt.checkpw(password.encode('utf-8'), hashed_password.encode('utf-8'))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Invalid salt
+2025-07-07 11:10:35,432 - ERROR - Invalid bcrypt hash format provided.
+Traceback (most recent call last):
+  File "C:\Users\nxvin\OneDrive\Desktop\Catalog_Manager - Navin\service\authentication_service.py", line 39, in check_password
+    result = bcrypt.checkpw(password.encode('utf-8'), hashed_password.encode('utf-8'))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Invalid salt
+2025-07-07 11:10:35,659 - INFO - Authenticating user: testuser
+2025-07-07 11:10:35,874 - DEBUG - Password check result: True
+2025-07-07 11:10:35,874 - INFO - User 'testuser' authenticated successfully.
+2025-07-07 11:10:36,106 - INFO - Authenticating user: user2@example.com
+2025-07-07 11:10:36,321 - DEBUG - Password check result: True
+2025-07-07 11:10:36,321 - INFO - User 'user2@example.com' authenticated successfully.
+2025-07-07 11:10:36,325 - WARNING - Missing username/email or password during authentication.
+2025-07-07 11:10:36,325 - WARNING - Missing username/email or password during authentication.
+2025-07-07 11:10:36,326 - INFO - Authenticating user: nonexistent
+2025-07-07 11:10:36,326 - WARNING - User 'nonexistent' not found.
+2025-07-07 11:10:36,550 - INFO - Authenticating user: testuser
+2025-07-07 11:10:36,770 - DEBUG - Password check result: False
+2025-07-07 11:10:36,770 - WARNING - Incorrect password for user 'testuser'.
+2025-07-07 11:10:36,773 - INFO - Authenticating user: testuser
+2025-07-07 11:10:36,773 - CRITICAL - Database error during authentication: DB error
+Traceback (most recent call last):
+  File "C:\Users\nxvin\OneDrive\Desktop\Catalog_Manager - Navin\service\authentication_service.py", line 62, in authenticate_user
+    user = self.user_service.get_user_by_username(username_or_email) or \
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+exception.catalog_exception.DatabaseConnectionError: DB error
+2025-07-07 11:21:12,099 - INFO - Counting catalogs | search='', status='None'
+2025-07-07 11:21:12,173 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:21:12,173 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 16}
+2025-07-07 11:21:12,175 - DEBUG - Total catalogs matched: 16
+2025-07-07 11:21:12,175 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
+2025-07-07 11:21:12,182 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:21:12,182 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 10
+2025-07-07 11:21:12,190 - INFO - Fetching catalog with ID 1
+2025-07-07 11:21:12,199 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:21:12,203 - DEBUG - Executed query (fetch_one): SELECT * FROM catalog WHERE catalog_id = %s | Params: (1,) | Result: {'catalog_id': 1, 'catalog_name': 'Summer Sale', 'catalog_description': 'Discounts on summer collection', 'start_date': datetime.date(2025, 7, 8), 'end_date': datetime.date(2025, 8, 12), 'status': 'active', 'user_id': None}
+2025-07-07 11:27:27,846 - INFO - Authenticating user: testuser
+2025-07-07 11:27:27,846 - INFO - Fetching user by username: testuser
+2025-07-07 11:27:27,958 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:27:27,958 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('testuser',) | Result: None
+2025-07-07 11:27:27,962 - WARNING - No user found with username: testuser
+2025-07-07 11:27:27,962 - INFO - Fetching user by email: testuser
+2025-07-07 11:27:27,967 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:27:27,967 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE email = %s | Params: ('testuser',) | Result: None
+2025-07-07 11:27:27,967 - WARNING - No user found with email: testuser
+2025-07-07 11:27:27,975 - WARNING - User 'testuser' not found.
+2025-07-07 11:27:27,977 - INFO - Counting catalogs | search='', status='None'
+2025-07-07 11:27:27,989 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:27:27,989 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 16}
+2025-07-07 11:27:27,992 - DEBUG - Total catalogs matched: 16
+2025-07-07 11:27:27,992 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
+2025-07-07 11:27:28,006 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:27:28,006 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 10
+2025-07-07 11:27:28,008 - INFO - Authenticating user: testuser
+2025-07-07 11:27:28,008 - INFO - Fetching user by username: testuser
+2025-07-07 11:27:28,022 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:27:28,024 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('testuser',) | Result: None
+2025-07-07 11:27:28,026 - WARNING - No user found with username: testuser
+2025-07-07 11:27:28,026 - INFO - Fetching user by email: testuser
+2025-07-07 11:27:28,038 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:27:28,038 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE email = %s | Params: ('testuser',) | Result: None
+2025-07-07 11:27:28,038 - WARNING - No user found with email: testuser
+2025-07-07 11:27:28,040 - WARNING - User 'testuser' not found.
+2025-07-07 11:27:28,042 - INFO - Counting catalogs | search='', status='None'
+2025-07-07 11:27:28,049 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:27:28,049 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 16}
+2025-07-07 11:27:28,049 - DEBUG - Total catalogs matched: 16
+2025-07-07 11:27:28,057 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
+2025-07-07 11:27:28,070 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:27:28,071 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 10
+2025-07-07 11:27:28,074 - INFO - Authenticating user: testuser
+2025-07-07 11:27:28,074 - INFO - Fetching user by username: testuser
+2025-07-07 11:27:28,085 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:27:28,088 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('testuser',) | Result: None
+2025-07-07 11:27:28,088 - WARNING - No user found with username: testuser
+2025-07-07 11:27:28,089 - INFO - Fetching user by email: testuser
+2025-07-07 11:27:28,100 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:27:28,102 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE email = %s | Params: ('testuser',) | Result: None
+2025-07-07 11:27:28,102 - WARNING - No user found with email: testuser
+2025-07-07 11:27:28,103 - WARNING - User 'testuser' not found.
+2025-07-07 11:27:28,105 - INFO - Authenticating user: testuser
+2025-07-07 11:27:28,107 - INFO - Fetching user by username: testuser
+2025-07-07 11:27:28,115 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:27:28,115 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('testuser',) | Result: None
+2025-07-07 11:27:28,115 - WARNING - No user found with username: testuser
+2025-07-07 11:27:28,115 - INFO - Fetching user by email: testuser
+2025-07-07 11:27:28,131 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:27:28,131 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE email = %s | Params: ('testuser',) | Result: None
+2025-07-07 11:27:28,135 - WARNING - No user found with email: testuser
+2025-07-07 11:27:28,135 - WARNING - User 'testuser' not found.
+2025-07-07 11:27:28,135 - INFO - Authenticating user: testuser
+2025-07-07 11:27:28,135 - INFO - Fetching user by username: testuser
+2025-07-07 11:27:28,149 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:27:28,149 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('testuser',) | Result: None
+2025-07-07 11:27:28,149 - WARNING - No user found with username: testuser
+2025-07-07 11:27:28,149 - INFO - Fetching user by email: testuser
+2025-07-07 11:27:28,158 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:27:28,164 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE email = %s | Params: ('testuser',) | Result: None
+2025-07-07 11:27:28,164 - WARNING - No user found with email: testuser
+2025-07-07 11:27:28,164 - WARNING - User 'testuser' not found.
+2025-07-07 11:27:28,164 - INFO - Authenticating user: testuser
+2025-07-07 11:27:28,168 - INFO - Fetching user by username: testuser
+2025-07-07 11:27:28,180 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:27:28,181 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('testuser',) | Result: None
+2025-07-07 11:27:28,182 - WARNING - No user found with username: testuser
+2025-07-07 11:27:28,182 - INFO - Fetching user by email: testuser
+2025-07-07 11:27:28,189 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:27:28,189 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE email = %s | Params: ('testuser',) | Result: None
+2025-07-07 11:27:28,196 - WARNING - No user found with email: testuser
+2025-07-07 11:27:28,196 - WARNING - User 'testuser' not found.
+2025-07-07 11:30:35,830 - INFO - Authenticating user: brucy
+2025-07-07 11:30:35,830 - INFO - Fetching user by username: brucy
+2025-07-07 11:30:35,911 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:30:35,911 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:30:35,911 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:30:36,242 - DEBUG - Password check result: True
+2025-07-07 11:30:36,242 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:30:36,252 - INFO - Authenticating user: brucy
+2025-07-07 11:30:36,253 - INFO - Fetching user by username: brucy
+2025-07-07 11:30:36,259 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:30:36,259 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:30:36,259 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:30:36,579 - DEBUG - Password check result: True
+2025-07-07 11:30:36,583 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:30:36,586 - INFO - Counting catalogs | search='', status='None'
+2025-07-07 11:30:36,592 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:30:36,592 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 16}
+2025-07-07 11:30:36,592 - DEBUG - Total catalogs matched: 16
+2025-07-07 11:30:36,600 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
+2025-07-07 11:30:36,609 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:30:36,609 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 10
+2025-07-07 11:30:36,609 - INFO - Authenticating user: brucy
+2025-07-07 11:30:36,609 - INFO - Fetching user by username: brucy
+2025-07-07 11:30:36,624 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:30:36,626 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:30:36,626 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:30:36,918 - DEBUG - Password check result: True
+2025-07-07 11:30:36,918 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:30:36,921 - INFO - Authenticating user: brucy
+2025-07-07 11:30:36,921 - INFO - Fetching user by username: brucy
+2025-07-07 11:30:36,927 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:30:36,927 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:30:36,927 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:30:37,206 - DEBUG - Password check result: True
+2025-07-07 11:30:37,206 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:30:37,206 - INFO - Authenticating user: brucy
+2025-07-07 11:30:37,206 - INFO - Fetching user by username: brucy
+2025-07-07 11:30:37,217 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:30:37,221 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:30:37,221 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:30:37,473 - DEBUG - Password check result: True
+2025-07-07 11:30:37,473 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:30:37,476 - INFO - Authenticating user: brucy
+2025-07-07 11:30:37,476 - INFO - Fetching user by username: brucy
+2025-07-07 11:30:37,487 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:30:37,487 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:30:37,487 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:30:37,727 - DEBUG - Password check result: True
+2025-07-07 11:30:37,727 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:34:57,104 - INFO - Authenticating user: brucy
+2025-07-07 11:34:57,104 - INFO - Fetching user by username: brucy
+2025-07-07 11:34:57,186 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:34:57,186 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:34:57,186 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:34:57,535 - DEBUG - Password check result: True
+2025-07-07 11:34:57,535 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:34:57,544 - INFO - Authenticating user: brucy
+2025-07-07 11:34:57,544 - INFO - Fetching user by username: brucy
+2025-07-07 11:34:57,557 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:34:57,557 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:34:57,557 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:34:57,897 - DEBUG - Password check result: True
+2025-07-07 11:34:57,897 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:34:57,899 - INFO - Counting catalogs | search='', status='None'
+2025-07-07 11:34:57,913 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:34:57,915 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 16}
+2025-07-07 11:34:57,915 - DEBUG - Total catalogs matched: 16
+2025-07-07 11:34:57,915 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
+2025-07-07 11:34:57,923 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:34:57,927 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 10
+2025-07-07 11:34:57,931 - INFO - Authenticating user: brucy
+2025-07-07 11:34:57,931 - INFO - Fetching user by username: brucy
+2025-07-07 11:34:57,942 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:34:57,942 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:34:57,945 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:34:58,278 - DEBUG - Password check result: True
+2025-07-07 11:34:58,278 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:34:58,281 - INFO - Authenticating user: brucy
+2025-07-07 11:34:58,281 - INFO - Fetching user by username: brucy
+2025-07-07 11:34:58,292 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:34:58,292 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:34:58,297 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:34:58,604 - DEBUG - Password check result: True
+2025-07-07 11:34:58,604 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:34:58,604 - INFO - Authenticating user: brucy
+2025-07-07 11:34:58,610 - INFO - Fetching user by username: brucy
+2025-07-07 11:34:58,620 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:34:58,622 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:34:58,622 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:34:58,897 - DEBUG - Password check result: True
+2025-07-07 11:34:58,897 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:34:58,911 - INFO - Authenticating user: brucy
+2025-07-07 11:34:58,911 - INFO - Fetching user by username: brucy
+2025-07-07 11:34:58,917 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:34:58,917 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:34:58,917 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:34:59,188 - DEBUG - Password check result: True
+2025-07-07 11:34:59,188 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:40:44,551 - INFO - Authenticating user: brucy
+2025-07-07 11:40:44,551 - INFO - Fetching user by username: brucy
+2025-07-07 11:40:44,635 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:40:44,635 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:40:44,638 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:40:44,966 - DEBUG - Password check result: True
+2025-07-07 11:40:44,966 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:40:44,977 - INFO - Authenticating user: brucy
+2025-07-07 11:40:44,977 - INFO - Fetching user by username: brucy
+2025-07-07 11:40:44,983 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:40:44,990 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:40:44,990 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:40:45,313 - DEBUG - Password check result: True
+2025-07-07 11:40:45,313 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:40:45,316 - INFO - Counting catalogs | search='', status='None'
+2025-07-07 11:40:45,322 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:40:45,331 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 16}
+2025-07-07 11:40:45,332 - DEBUG - Total catalogs matched: 16
+2025-07-07 11:40:45,332 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
+2025-07-07 11:40:45,341 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:40:45,341 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 10
+2025-07-07 11:40:45,346 - INFO - Authenticating user: brucy
+2025-07-07 11:40:45,346 - INFO - Fetching user by username: brucy
+2025-07-07 11:40:45,358 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:40:45,358 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:40:45,358 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:40:45,642 - DEBUG - Password check result: True
+2025-07-07 11:40:45,642 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:40:45,642 - INFO - Authenticating user: brucy
+2025-07-07 11:40:45,642 - INFO - Fetching user by username: brucy
+2025-07-07 11:40:45,654 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:40:45,654 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:40:45,659 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:40:45,908 - DEBUG - Password check result: True
+2025-07-07 11:40:45,908 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:40:45,913 - INFO - Authenticating user: brucy
+2025-07-07 11:40:45,914 - INFO - Fetching user by username: brucy
+2025-07-07 11:40:45,920 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:40:45,923 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:40:45,924 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:40:46,150 - DEBUG - Password check result: True
+2025-07-07 11:40:46,150 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:40:46,154 - INFO - Authenticating user: brucy
+2025-07-07 11:40:46,154 - INFO - Fetching user by username: brucy
+2025-07-07 11:40:46,165 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:40:46,165 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:40:46,165 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:40:46,384 - DEBUG - Password check result: True
+2025-07-07 11:40:46,384 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:43:36,524 - INFO - Authenticating user: brucy
+2025-07-07 11:43:36,524 - INFO - Fetching user by username: brucy
+2025-07-07 11:43:36,605 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:43:36,605 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:43:36,608 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:43:36,934 - DEBUG - Password check result: True
+2025-07-07 11:43:36,942 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:43:36,948 - INFO - Authenticating user: brucy
+2025-07-07 11:43:36,948 - INFO - Fetching user by username: brucy
+2025-07-07 11:43:36,963 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:43:36,965 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:43:36,966 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:43:37,269 - DEBUG - Password check result: True
+2025-07-07 11:43:37,277 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:43:37,283 - INFO - Creating new catalog for user_id=2 with name='Test Catalog'
+2025-07-07 11:43:37,292 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:43:37,337 - DEBUG - Executed query with commit: INSERT INTO catalog (catalog_name, catalog_description, start_date, end_date, status, user_id)
+            VALUES (%s, %s, %s, %s, %s, %s) | Params: ('Test Catalog', 'Test description', '2030-01-01', '2030-01-31', 'active', '2') | Result: 37
+2025-07-07 11:43:37,337 - INFO - Catalog created successfully with ID 37
+2025-07-07 11:43:37,342 - INFO - Counting catalogs | search='', status='None'
+2025-07-07 11:43:37,351 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:43:37,354 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 17}
+2025-07-07 11:43:37,354 - DEBUG - Total catalogs matched: 17
+2025-07-07 11:43:37,356 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
+2025-07-07 11:43:37,367 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:43:37,367 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 10
+2025-07-07 11:43:37,372 - INFO - Authenticating user: brucy
+2025-07-07 11:43:37,372 - INFO - Fetching user by username: brucy
+2025-07-07 11:43:37,384 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:43:37,384 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:43:37,384 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:43:37,685 - DEBUG - Password check result: True
+2025-07-07 11:43:37,685 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:43:37,685 - INFO - Creating new catalog for user_id=2 with name='Catalog For Get'
+2025-07-07 11:43:37,699 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:43:37,738 - DEBUG - Executed query with commit: INSERT INTO catalog (catalog_name, catalog_description, start_date, end_date, status, user_id)
+            VALUES (%s, %s, %s, %s, %s, %s) | Params: ('Catalog For Get', 'Description', '2030-01-01', '2030-01-31', 'active', '2') | Result: 38
+2025-07-07 11:43:37,738 - INFO - Catalog created successfully with ID 38
+2025-07-07 11:43:37,740 - INFO - Fetching catalog with ID 38
+2025-07-07 11:43:37,749 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:43:37,749 - DEBUG - Executed query (fetch_one): SELECT * FROM catalog WHERE catalog_id = %s | Params: (38,) | Result: {'catalog_id': 38, 'catalog_name': 'Catalog For Get', 'catalog_description': 'Description', 'start_date': datetime.date(2030, 1, 1), 'end_date': datetime.date(2030, 1, 31), 'status': 'active', 'user_id': 2}
+2025-07-07 11:43:37,753 - INFO - Authenticating user: brucy
+2025-07-07 11:43:37,753 - INFO - Fetching user by username: brucy
+2025-07-07 11:43:37,761 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:43:37,765 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:43:37,766 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:43:38,029 - DEBUG - Password check result: True
+2025-07-07 11:43:38,029 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:43:38,033 - INFO - Creating new catalog for user_id=2 with name='Catalog To Update'
+2025-07-07 11:43:38,043 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:43:38,081 - DEBUG - Executed query with commit: INSERT INTO catalog (catalog_name, catalog_description, start_date, end_date, status, user_id)
+            VALUES (%s, %s, %s, %s, %s, %s) | Params: ('Catalog To Update', 'Description', '2030-01-01', '2030-01-31', 'active', '2') | Result: 39
+2025-07-07 11:43:38,083 - INFO - Catalog created successfully with ID 39
+2025-07-07 11:43:38,084 - INFO - Updating catalog ID 39
+2025-07-07 11:43:38,084 - INFO - Fetching catalog with ID 39
+2025-07-07 11:43:38,093 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:43:38,093 - DEBUG - Executed query (fetch_one): SELECT * FROM catalog WHERE catalog_id = %s | Params: (39,) | Result: {'catalog_id': 39, 'catalog_name': 'Catalog To Update', 'catalog_description': 'Description', 'start_date': datetime.date(2030, 1, 1), 'end_date': datetime.date(2030, 1, 31), 'status': 'active', 'user_id': 2}
+2025-07-07 11:43:38,101 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:43:38,111 - DEBUG - Executed query with commit: UPDATE catalog
+            SET catalog_name = %s, catalog_description = %s,
+                start_date = %s, end_date = %s, status = %s
+            WHERE catalog_id = %s | Params: ('Updated Catalog Name', 'Updated description', '2030-02-01', '2030-02-28', 'inactive', 39) | Result: 1
+2025-07-07 11:43:38,114 - INFO - Catalog ID 39 updated successfully.
+2025-07-07 11:43:38,115 - INFO - Authenticating user: brucy
+2025-07-07 11:43:38,115 - INFO - Fetching user by username: brucy
+2025-07-07 11:43:38,118 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:43:38,126 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:43:38,126 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:43:38,367 - DEBUG - Password check result: True
+2025-07-07 11:43:38,367 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:43:38,367 - INFO - Creating new catalog for user_id=2 with name='Catalog To Delete'
+2025-07-07 11:43:38,373 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:43:38,417 - DEBUG - Executed query with commit: INSERT INTO catalog (catalog_name, catalog_description, start_date, end_date, status, user_id)
+            VALUES (%s, %s, %s, %s, %s, %s) | Params: ('Catalog To Delete', 'Description', '2030-01-01', '2030-01-31', 'active', '2') | Result: 40
+2025-07-07 11:43:38,417 - INFO - Catalog created successfully with ID 40
+2025-07-07 11:43:38,419 - INFO - Deleting catalog ID 40
+2025-07-07 11:43:38,419 - INFO - Fetching catalog with ID 40
+2025-07-07 11:43:38,427 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:43:38,427 - DEBUG - Executed query (fetch_one): SELECT * FROM catalog WHERE catalog_id = %s | Params: (40,) | Result: {'catalog_id': 40, 'catalog_name': 'Catalog To Delete', 'catalog_description': 'Description', 'start_date': datetime.date(2030, 1, 1), 'end_date': datetime.date(2030, 1, 31), 'status': 'active', 'user_id': 2}
+2025-07-07 11:43:38,434 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:43:38,440 - DEBUG - Executed query with commit: DELETE FROM catalog WHERE catalog_id = %s | Params: (40,) | Result: 1
+2025-07-07 11:43:38,440 - INFO - Catalog ID 40 deleted successfully.
+2025-07-07 11:43:38,443 - INFO - Authenticating user: brucy
+2025-07-07 11:43:38,443 - INFO - Fetching user by username: brucy
+2025-07-07 11:43:38,451 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:43:38,451 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:43:38,451 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:43:38,678 - DEBUG - Password check result: True
+2025-07-07 11:43:38,678 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:51:41,205 - INFO - Authenticating user: brucy
+2025-07-07 11:51:41,205 - INFO - Fetching user by username: brucy
+2025-07-07 11:51:41,308 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:51:41,308 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:51:41,310 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:51:41,590 - DEBUG - Password check result: True
+2025-07-07 11:51:41,590 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:51:41,600 - INFO - Authenticating user: brucy
+2025-07-07 11:51:41,601 - INFO - Fetching user by username: brucy
+2025-07-07 11:51:41,607 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:51:41,607 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:51:41,607 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:51:41,861 - DEBUG - Password check result: True
+2025-07-07 11:51:41,861 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:51:41,869 - INFO - Creating new catalog for user_id=1 with name='Test Catalog'
+2025-07-07 11:51:41,878 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:51:41,917 - DEBUG - Executed query with commit: INSERT INTO catalog (catalog_name, catalog_description, start_date, end_date, status, user_id)
+            VALUES (%s, %s, %s, %s, %s, %s) | Params: ('Test Catalog', 'Test description', '2030-01-01', '2030-01-31', 'active', 1) | Result: 41
+2025-07-07 11:51:41,918 - INFO - Catalog created successfully with ID 41
+2025-07-07 11:51:41,919 - INFO - Counting catalogs | search='', status='None'
+2025-07-07 11:51:41,927 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:51:41,927 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 | Params: () | Result: {'COUNT(*)': 20}
+2025-07-07 11:51:41,927 - DEBUG - Total catalogs matched: 20
+2025-07-07 11:51:41,934 - INFO - Retrieving all catalogs | search='', status='None', page=1, per_page=10
+2025-07-07 11:51:41,935 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:51:41,943 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: (10, 0) | Result count: 10
+2025-07-07 11:51:41,943 - INFO - Authenticating user: brucy
+2025-07-07 11:51:41,943 - INFO - Fetching user by username: brucy
+2025-07-07 11:51:41,952 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:51:41,952 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:51:41,960 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:51:42,201 - DEBUG - Password check result: True
+2025-07-07 11:51:42,201 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:51:42,201 - INFO - Creating new catalog for user_id=1 with name='Catalog For Get'
+2025-07-07 11:51:42,208 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:51:42,248 - DEBUG - Executed query with commit: INSERT INTO catalog (catalog_name, catalog_description, start_date, end_date, status, user_id)
+            VALUES (%s, %s, %s, %s, %s, %s) | Params: ('Catalog For Get', 'Description', '2030-01-01', '2030-01-31', 'active', 1) | Result: 42
+2025-07-07 11:51:42,250 - INFO - Catalog created successfully with ID 42
+2025-07-07 11:51:42,252 - INFO - Fetching catalog with ID 42
+2025-07-07 11:51:42,259 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:51:42,259 - DEBUG - Executed query (fetch_one): SELECT * FROM catalog WHERE catalog_id = %s | Params: (42,) | Result: {'catalog_id': 42, 'catalog_name': 'Catalog For Get', 'catalog_description': 'Description', 'start_date': datetime.date(2030, 1, 1), 'end_date': datetime.date(2030, 1, 31), 'status': 'active', 'user_id': 1}
+2025-07-07 11:51:42,259 - INFO - Authenticating user: brucy
+2025-07-07 11:51:42,259 - INFO - Fetching user by username: brucy
+2025-07-07 11:51:42,269 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:51:42,269 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:51:42,275 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:51:42,490 - DEBUG - Password check result: True
+2025-07-07 11:51:42,498 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:51:42,530 - INFO - Creating new catalog for user_id=1 with name='Catalog To Update'
+2025-07-07 11:51:42,539 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:51:42,542 - DEBUG - Executed query with commit: INSERT INTO catalog (catalog_name, catalog_description, start_date, end_date, status, user_id)
+            VALUES (%s, %s, %s, %s, %s, %s) | Params: ('Catalog To Update', 'Description', '2030-01-01', '2030-01-31', 'active', 1) | Result: 43
+2025-07-07 11:51:42,542 - INFO - Catalog created successfully with ID 43
+2025-07-07 11:51:42,542 - INFO - Updating catalog ID 43
+2025-07-07 11:51:42,542 - INFO - Fetching catalog with ID 43
+2025-07-07 11:51:42,556 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:51:42,556 - DEBUG - Executed query (fetch_one): SELECT * FROM catalog WHERE catalog_id = %s | Params: (43,) | Result: {'catalog_id': 43, 'catalog_name': 'Catalog To Update', 'catalog_description': 'Description', 'start_date': datetime.date(2030, 1, 1), 'end_date': datetime.date(2030, 1, 31), 'status': 'active', 'user_id': 1}
+2025-07-07 11:51:42,566 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:51:42,572 - DEBUG - Executed query with commit: UPDATE catalog
+            SET catalog_name = %s, catalog_description = %s,
+                start_date = %s, end_date = %s, status = %s
+            WHERE catalog_id = %s | Params: ('Updated Catalog Name', 'Updated description', '2030-02-01', '2030-02-28', 'inactive', 43) | Result: 1
+2025-07-07 11:51:42,572 - INFO - Catalog ID 43 updated successfully.
+2025-07-07 11:51:42,574 - INFO - Authenticating user: brucy
+2025-07-07 11:51:42,574 - INFO - Fetching user by username: brucy
+2025-07-07 11:51:42,584 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:51:42,584 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:51:42,584 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:51:42,803 - DEBUG - Password check result: True
+2025-07-07 11:51:42,803 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:51:42,811 - INFO - Creating new catalog for user_id=1 with name='Catalog To Delete'
+2025-07-07 11:51:42,818 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:51:42,855 - DEBUG - Executed query with commit: INSERT INTO catalog (catalog_name, catalog_description, start_date, end_date, status, user_id)
+            VALUES (%s, %s, %s, %s, %s, %s) | Params: ('Catalog To Delete', 'Description', '2030-01-01', '2030-01-31', 'active', 1) | Result: 44
+2025-07-07 11:51:42,855 - INFO - Catalog created successfully with ID 44
+2025-07-07 11:51:42,855 - INFO - Deleting catalog ID 44
+2025-07-07 11:51:42,855 - INFO - Fetching catalog with ID 44
+2025-07-07 11:51:42,861 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:51:42,861 - DEBUG - Executed query (fetch_one): SELECT * FROM catalog WHERE catalog_id = %s | Params: (44,) | Result: {'catalog_id': 44, 'catalog_name': 'Catalog To Delete', 'catalog_description': 'Description', 'start_date': datetime.date(2030, 1, 1), 'end_date': datetime.date(2030, 1, 31), 'status': 'active', 'user_id': 1}
+2025-07-07 11:51:42,870 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:51:42,876 - DEBUG - Executed query with commit: DELETE FROM catalog WHERE catalog_id = %s | Params: (44,) | Result: 1
+2025-07-07 11:51:42,876 - INFO - Catalog ID 44 deleted successfully.
+2025-07-07 11:51:42,879 - INFO - Authenticating user: brucy
+2025-07-07 11:51:42,882 - INFO - Fetching user by username: brucy
+2025-07-07 11:51:42,884 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:51:42,892 - DEBUG - Executed query (fetch_one): SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s | Params: ('brucy',) | Result: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:51:42,892 - DEBUG - User found: {'user_id': 2, 'username': 'brucy', 'email': 'brucy@gmail.com', 'password_hash': '$2b$12$vH4.n1Ws8zbB4TKERi9Uhe0/JOeqR6E8BSt.HgltZ1yv4zJ1dTyOe', 'created_at': datetime.datetime(2025, 7, 2, 11, 26, 51)}
+2025-07-07 11:51:43,117 - DEBUG - Password check result: True
+2025-07-07 11:51:43,117 - INFO - User 'brucy' authenticated successfully.
+2025-07-07 11:51:43,387 - DEBUG - Password hashed successfully.
+2025-07-07 11:51:43,614 - WARNING - Invalid password input for hashing.
+2025-07-07 11:51:43,614 - WARNING - Invalid password input for hashing.
+2025-07-07 11:51:43,617 - WARNING - Invalid password input for hashing.
+2025-07-07 11:51:44,055 - DEBUG - Password check result: True
+2025-07-07 11:51:44,269 - DEBUG - Password check result: False
+2025-07-07 11:51:44,285 - ERROR - Invalid bcrypt hash format provided.
+Traceback (most recent call last):
+  File "C:\Users\nxvin\OneDrive\Desktop\Catalog_Manager - Navin\service\authentication_service.py", line 39, in check_password
+    result = bcrypt.checkpw(password.encode('utf-8'), hashed_password.encode('utf-8'))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Invalid salt
+2025-07-07 11:51:44,288 - ERROR - Invalid bcrypt hash format provided.
+Traceback (most recent call last):
+  File "C:\Users\nxvin\OneDrive\Desktop\Catalog_Manager - Navin\service\authentication_service.py", line 39, in check_password
+    result = bcrypt.checkpw(password.encode('utf-8'), hashed_password.encode('utf-8'))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Invalid salt
+2025-07-07 11:51:44,514 - INFO - Authenticating user: testuser
+2025-07-07 11:51:44,734 - DEBUG - Password check result: True
+2025-07-07 11:51:44,735 - INFO - User 'testuser' authenticated successfully.
+2025-07-07 11:51:44,952 - INFO - Authenticating user: user2@example.com
+2025-07-07 11:51:45,172 - DEBUG - Password check result: True
+2025-07-07 11:51:45,172 - INFO - User 'user2@example.com' authenticated successfully.
+2025-07-07 11:51:45,180 - WARNING - Missing username/email or password during authentication.
+2025-07-07 11:51:45,180 - WARNING - Missing username/email or password during authentication.
+2025-07-07 11:51:45,181 - INFO - Authenticating user: nonexistent
+2025-07-07 11:51:45,181 - WARNING - User 'nonexistent' not found.
+2025-07-07 11:51:45,403 - INFO - Authenticating user: testuser
+2025-07-07 11:51:45,626 - DEBUG - Password check result: False
+2025-07-07 11:51:45,626 - WARNING - Incorrect password for user 'testuser'.
+2025-07-07 11:51:45,626 - INFO - Authenticating user: testuser
+2025-07-07 11:51:45,626 - CRITICAL - Database error during authentication: DB error
+Traceback (most recent call last):
+  File "C:\Users\nxvin\OneDrive\Desktop\Catalog_Manager - Navin\service\authentication_service.py", line 62, in authenticate_user
+    user = self.user_service.get_user_by_username(username_or_email) or \
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+exception.catalog_exception.DatabaseConnectionError: DB error
+2025-07-07 11:51:45,632 - INFO - Creating new catalog for user_id=1 with name='Test Catalog'
+2025-07-07 11:51:45,636 - DEBUG - Executed query with commit: INSERT INTO catalog (catalog_name, catalog_description, start_date, end_date, status, user_id)
+            VALUES (%s, %s, %s, %s, %s, %s) | Params: ('Test Catalog', 'Test Description', '2025-01-01', '2025-12-31', 'active', 1) | Result: 42
+2025-07-07 11:51:45,637 - INFO - Catalog created successfully with ID 42
+2025-07-07 11:51:45,640 - INFO - Fetching catalog with ID 1
+2025-07-07 11:51:45,642 - DEBUG - Executed query (fetch_one): SELECT * FROM catalog WHERE catalog_id = %s | Params: (1,) | Result: {'catalog_id': 1, 'catalog_name': 'Test', 'catalog_description': 'Desc', 'start_date': '2025-01-01', 'end_date': '2025-12-31', 'status': 'active', 'user_id': 1}
+2025-07-07 11:51:45,647 - INFO - Fetching catalog with ID 99
+2025-07-07 11:51:45,647 - DEBUG - Executed query (fetch_one): SELECT * FROM catalog WHERE catalog_id = %s | Params: (99,) | Result: None
+2025-07-07 11:51:45,648 - WARNING - Catalog with ID 99 not found.
+2025-07-07 11:51:45,656 - INFO - Retrieving all catalogs | search='Test', status='active', page=1, per_page=10
+2025-07-07 11:51:45,657 - DEBUG - Executed query (fetch_all): SELECT * FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) AND status = %s ORDER BY catalog_id DESC LIMIT %s OFFSET %s | Params: ('Test', '%Test%', '%Test%', 'active', 10, 0) | Result count: 2
+2025-07-07 11:51:45,659 - INFO - Counting catalogs | search='Test', status='active'
+2025-07-07 11:51:45,659 - DEBUG - Executed query (fetch_one): SELECT COUNT(*) FROM catalog WHERE 1=1 AND (catalog_id = %s OR catalog_name LIKE %s OR catalog_description LIKE %s) AND status = %s | Params: ('Test', '%Test%', '%Test%', 'active') | Result: {'COUNT(*)': 5}
+2025-07-07 11:51:45,664 - DEBUG - Total catalogs matched: 5
+2025-07-07 11:51:45,667 - INFO - Updating catalog ID 1
+2025-07-07 11:51:45,667 - INFO - Fetching catalog with ID 1
+2025-07-07 11:51:45,667 - DEBUG - Executed query (fetch_one): SELECT * FROM catalog WHERE catalog_id = %s | Params: (1,) | Result: {'catalog_id': 1}
+2025-07-07 11:51:45,669 - DEBUG - Executed query with commit: UPDATE catalog
+            SET catalog_name = %s, catalog_description = %s,
+                start_date = %s, end_date = %s, status = %s
+            WHERE catalog_id = %s | Params: ('Test Catalog', 'Test Description', '2025-01-01', '2025-12-31', 'active', 1) | Result: 1
+2025-07-07 11:51:45,669 - INFO - Catalog ID 1 updated successfully.
+2025-07-07 11:51:45,674 - INFO - Updating catalog ID 1
+2025-07-07 11:51:45,674 - DEBUG - Executed query with commit: UPDATE catalog
+            SET catalog_name = %s, catalog_description = %s,
+                start_date = %s, end_date = %s, status = %s
+            WHERE catalog_id = %s | Params: ('Test Catalog', 'Test Description', '2025-01-01', '2025-12-31', 'active', 1) | Result: 0
+2025-07-07 11:51:45,678 - WARNING - No rows updated for catalog ID 1
+2025-07-07 11:51:45,678 - INFO - Deleting catalog ID 1
+2025-07-07 11:51:45,678 - DEBUG - Executed query with commit: DELETE FROM catalog WHERE catalog_id = %s | Params: (1,) | Result: 1
+2025-07-07 11:51:45,681 - INFO - Catalog ID 1 deleted successfully.
+2025-07-07 11:51:45,684 - INFO - Deleting catalog ID 1
+2025-07-07 11:51:45,688 - DEBUG - Executed query with commit: DELETE FROM catalog WHERE catalog_id = %s | Params: (1,) | Result: 0
+2025-07-07 11:51:45,690 - WARNING - No rows deleted for catalog ID 1
+2025-07-07 11:51:45,692 - INFO - Successfully connected to the MySQL database.
+2025-07-07 11:51:45,692 - CRITICAL - Configuration file not found: C:\Users\nxvin\OneDrive\Desktop\Catalog_Manager - Navin\config\config.ini
+2025-07-07 11:51:45,692 - ERROR - Unexpected error while connecting to the database: Configuration file not found at: C:\Users\nxvin\OneDrive\Desktop\Catalog_Manager - Navin\config\config.ini
+Traceback (most recent call last):
+  File "C:\Users\nxvin\OneDrive\Desktop\Catalog_Manager - Navin\utils\db_get_connection.py", line 21, in get_connection
+    raise FileNotFoundError(f"Configuration file not found at: {config_path}")
+FileNotFoundError: Configuration file not found at: C:\Users\nxvin\OneDrive\Desktop\Catalog_Manager - Navin\config\config.ini
+2025-07-07 11:51:45,695 - CRITICAL - MySQL connection failed: Connection failed
+Traceback (most recent call last):
+  File "C:\Users\nxvin\OneDrive\Desktop\Catalog_Manager - Navin\utils\db_get_connection.py", line 26, in get_connection
+    connection = mysql.connector.connect(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nxvin\OneDrive\Desktop\Catalog_Manager - Navin\tests\test_db_connection.py", line 47, in <lambda>
+    monkeypatch.setattr('utils.db_get_connection.mysql.connector.connect', lambda **kwargs: (_ for _ in ()).throw(MySQLError("Connection failed")))
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nxvin\OneDrive\Desktop\Catalog_Manager - Navin\tests\test_db_connection.py", line 47, in <genexpr>
+    monkeypatch.setattr('utils.db_get_connection.mysql.connector.connect', lambda **kwargs: (_ for _ in ()).throw(MySQLError("Connection failed")))
+mysql.connector.errors.Error: Connection failed
+2025-07-07 11:51:45,697 - ERROR - Unexpected error while connecting to the database: Unexpected config error
+Traceback (most recent call last):
+  File "C:\Users\nxvin\OneDrive\Desktop\Catalog_Manager - Navin\utils\db_get_connection.py", line 27, in get_connection
+    host=config.get('mysql', 'host'),
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nxvin\OneDrive\Desktop\Catalog_Manager - Navin\tests\test_db_connection.py", line 60, in get
+    raise Exception("Unexpected config error")
+Exception: Unexpected config error
+2025-07-07 11:51:45,705 - INFO - Fetching user by username: navin
+2025-07-07 11:51:45,705 - DEBUG - User found: {'user_id': 1, 'username': 'navin', 'email': 'navin@example.com', 'password_hash': 'hashed_password', 'created_at': '2025-07-07 10:00:00'}
+2025-07-07 11:51:45,709 - INFO - Fetching user by username: unknown
+2025-07-07 11:51:45,709 - WARNING - No user found with username: unknown
+2025-07-07 11:51:45,711 - INFO - Fetching user by email: navin@example.com
+2025-07-07 11:51:45,711 - DEBUG - User found: {'user_id': 1, 'username': 'navin', 'email': 'navin@example.com', 'password_hash': 'hashed_password', 'created_at': '2025-07-07 10:00:00'}
+2025-07-07 11:51:45,713 - INFO - Fetching user by email: unknown@example.com
+2025-07-07 11:51:45,713 - WARNING - No user found with email: unknown@example.com
+2025-07-07 11:51:45,713 - INFO - Fetching user by ID: 1
+2025-07-07 11:51:45,713 - INFO - Fetching user by ID: 999
+2025-07-07 11:51:45,720 - INFO - Creating new user: navin
+2025-07-07 11:51:45,721 - INFO - User created successfully with ID 5
+2025-07-07 11:51:45,727 - WARNING - TestField cannot be empty.
+2025-07-07 11:51:45,729 - WARNING - TestField contains invalid characters.
+2025-07-07 11:51:45,729 - WARNING - TestField must be a string.
+2025-07-07 11:51:45,729 - WARNING - TestField cannot be empty.
+2025-07-07 11:51:45,729 - WARNING - TestField length must be between 1 and 255.
+2025-07-07 11:51:45,736 - WARNING - StartDate is not in valid 'YYYY-MM-DD' format.
+2025-07-07 11:51:45,737 - WARNING - StartDate must be a string.
+2025-07-07 11:51:45,742 - WARNING - StartDate cannot be in the past.
+2025-07-07 11:51:45,744 - WARNING - Invalid status 'pending'. Allowed: ['active', 'inactive'].
+2025-07-07 11:51:45,746 - WARNING - Status must be a string.

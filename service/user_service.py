@@ -87,24 +87,20 @@ class UserService:
             password_hash=user_data['password_hash'],
             created_at=user_data['created_at']
         ) if user_data else None
-
-    def get_user_by_id(self, user_id: int) -> User | None:
-        """Retrieves a user by their ID."""
+    def get_user_by_id(self, user_id: int) -> User:
         logger.info(f"Fetching user by ID: {user_id}")
         query = "SELECT user_id, username, email, password_hash, created_at FROM users WHERE user_id = %s"
         params = (user_id,)
         user_data = self._execute_query(query, params, fetch_one=True)
-        if user_data:
-            logger.debug(f"User found: {user_data}")
-        else:
-            logger.warning(f"No user found with ID: {user_id}")
+        if not user_data:
+            raise DataNotFoundError(f"No user found with ID: {user_id}")
         return User(
-            user_id=user_data['user_id'],
-            username=user_data['username'],
-            email=user_data['email'],
-            password_hash=user_data['password_hash'],
-            created_at=user_data['created_at']
-        ) if user_data else None
+          user_id=user_data['user_id'],
+          username=user_data['username'],
+          email=user_data['email'],
+          password_hash=user_data['password_hash'],
+          created_at=user_data['created_at']
+      )
 
     def create_user(self, user: User) -> int:
         """Adds a new user to the database."""
@@ -117,3 +113,16 @@ class UserService:
         user_id = self._execute_query(query, params, commit=True)
         logger.info(f"User created successfully with ID {user_id}")
         return user_id
+
+    # user_service.py
+
+    def check_user_exists_by_username(self, username: str) -> bool:
+       query = "SELECT EXISTS(SELECT 1 FROM users WHERE username = %s) AS exists"
+       result = self._execute_query(query, (username,), fetch_one=True)
+       return bool(result and result.get('exists'))
+
+    def check_user_exists_by_email(self, email: str) -> bool:
+       query = "SELECT EXISTS(SELECT 1 FROM users WHERE email = %s) AS exists"
+       result = self._execute_query(query, (email,), fetch_one=True)
+       return bool(result and result.get('exists'))
+

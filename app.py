@@ -122,9 +122,10 @@ def login_page():
 @app.route('/api/login', methods=['POST'])
 def login_api():
     """Authenticates a user and sets JWT cookies upon successful login."""
-    data = request.get_json()
+    data = request.get_json(silent=True)
     if not data:
-        raise ValidationError("Request must contain JSON data.")
+     raise ValidationError("Request must contain valid JSON data.")
+
 
     username_or_email = data.get('username_or_email')
     password = data.get('password')
@@ -156,9 +157,10 @@ def logout_api():
 def add_catalog_api() -> tuple[jsonify, int]:
     """API endpoint to create a new catalog entry, associated with the logged-in user."""
     current_user_id = get_jwt_identity()
-    data = request.get_json()
+    data = request.get_json(silent=True)
     if not data:
-        raise ValidationError("Request must contain JSON data.")
+     raise ValidationError("Request must contain valid JSON data.")
+
 
     try:
         name = validate_alphanumeric_string(data.get('name'), "Name", max_length=30)
@@ -245,9 +247,10 @@ def get_all_catalogs_api() -> tuple[jsonify, int]:
 @jwt_required()
 def update_catalog_api(catalog_id: int) -> tuple[jsonify, int]:
     """API endpoint to update an existing catalog entry by its ID, protected by JWT."""
-    data = request.get_json()
+    data = request.get_json(silent=True)
     if not data:
-        raise ValidationError("Request must contain JSON data.")
+     raise ValidationError("Request must contain valid JSON data.")
+
 
     try:
         name = validate_alphanumeric_string(data.get('name'), "Name", max_length=30)
