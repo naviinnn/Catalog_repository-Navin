@@ -5,6 +5,11 @@ from datetime import date, datetime, timedelta
 import configparser
 from utils.logger import logger
 
+# Importing Flask extensions
+from flasgger import Swagger
+from routes.catalog_routes import catalog_bp
+from routes.auth_routes import auth_bp
+
 
 # JWT specific imports
 from flask_jwt_extended import create_access_token, jwt_required, JWTManager, get_jwt_identity, set_access_cookies, unset_jwt_cookies, verify_jwt_in_request
@@ -21,6 +26,15 @@ from exception.catalog_exception import ValidationError, DataNotFoundError, Data
 from utils.validation import validate_alphanumeric_string, validate_date, validate_future_date, validate_status
 
 app = Flask(__name__)
+
+swagger_config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'swagger', 'swagger_config.yml')
+swagger = Swagger(app, template_file=swagger_config_path)
+
+# Register blueprint
+app.register_blueprint(catalog_bp)
+app.register_blueprint(auth_bp)
+
+
 
 # Load JWT secret key from config.ini
 config = configparser.ConfigParser()
