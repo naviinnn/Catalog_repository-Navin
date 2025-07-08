@@ -53,7 +53,15 @@ class UserService:
                 conn.close()
 
     def get_user_by_username(self, username: str) -> User | None:
-        """Retrieves a user by their username."""
+        """
+        Retrieve a user by username.
+
+        Args:
+              username (str): The username to search for.
+
+        Returns:
+               User | None: User object if found, else None.
+        """
         logger.info(f"Fetching user by username: {username}")
         query = "SELECT user_id, username, email, password_hash, created_at FROM users WHERE username = %s"
         params = (username,)
@@ -71,7 +79,15 @@ class UserService:
         ) if user_data else None
 
     def get_user_by_email(self, email: str) -> User | None:
-        """Retrieves a user by their email."""
+        """
+        Retrieve a user by email.
+
+        Args:
+             email (str): The email to search for.
+
+        Returns:
+                User | None: User object if found, else None.
+        """
         logger.info(f"Fetching user by email: {email}")
         query = "SELECT user_id, username, email, password_hash, created_at FROM users WHERE email = %s"
         params = (email,)
@@ -88,6 +104,18 @@ class UserService:
             created_at=user_data['created_at']
         ) if user_data else None
     def get_user_by_id(self, user_id: int) -> User:
+        """
+         Retrieve a user by user ID.
+
+         Args:
+         user_id (int): The ID of the user.
+
+         Returns:
+          User: User object if found.
+
+         Raises:
+          DataNotFoundError: If user with the given ID does not exist.
+        """
         logger.info(f"Fetching user by ID: {user_id}")
         query = "SELECT user_id, username, email, password_hash, created_at FROM users WHERE user_id = %s"
         params = (user_id,)
@@ -103,7 +131,15 @@ class UserService:
       )
 
     def create_user(self, user: User) -> int:
-        """Adds a new user to the database."""
+        """
+        Add a new user to the database.
+
+        Args:
+              user (User): User object to add.
+
+        Returns:
+           int: ID of the newly created user.
+        """
         logger.info(f"Creating new user: {user.username}")
         query = """
             INSERT INTO users (username, password_hash, email)
@@ -114,14 +150,30 @@ class UserService:
         logger.info(f"User created successfully with ID {user_id}")
         return user_id
 
-    # user_service.py
-
     def check_user_exists_by_username(self, username: str) -> bool:
+       """
+       Check if a user exists by username.
+   
+       Args:
+          username (str): Username to check.
+
+       Returns:
+          bool: True if user exists, False otherwise.
+       """
        query = "SELECT EXISTS(SELECT 1 FROM users WHERE username = %s) AS exists"
        result = self._execute_query(query, (username,), fetch_one=True)
        return bool(result and result.get('exists'))
 
     def check_user_exists_by_email(self, email: str) -> bool:
+       """
+        Check if a user exists by email.
+
+        Args:
+              email (str): Email to check.
+
+        Returns:
+               bool: True if user exists, False otherwise.
+       """
        query = "SELECT EXISTS(SELECT 1 FROM users WHERE email = %s) AS exists"
        result = self._execute_query(query, (email,), fetch_one=True)
        return bool(result and result.get('exists'))

@@ -374,6 +374,19 @@ def update_catalog_api(catalog_id):
     'security': [{'Bearer': []}]
 })
 def delete_catalog_api(catalog_id):
+    """
+    Delete a catalog by its ID.
+
+    Attempts to delete the catalog and returns JSON response indicating success or error.
+
+    Args:
+           catalog_id (int): ID of the catalog to delete.
+
+    Returns:
+             Flask Response: JSON message indicating deletion status.
+    """
+
+
     try:
         catalog_service.delete_catalog_by_id(catalog_id)
         return jsonify({"message": f"Catalog ID {catalog_id} deleted successfully."}), 200

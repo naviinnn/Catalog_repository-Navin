@@ -21,7 +21,8 @@ from service.user_service import UserService
 from dto.user import User
 from exception.catalog_exception import DataNotFoundError
 
-# Generate bcrypt hash for the password "TestPassword123!"
+# Sample password for hashing
+# This should be a secure password in a real application
 sample_password = "TestPassword123!"
 hashed_password = bcrypt.hashpw(sample_password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
 
