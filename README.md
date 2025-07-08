@@ -27,6 +27,7 @@ A robust Flask-based web application to efficiently manage product catalogs. Thi
 - 🧪 **Testing Suite:** Automated tests with pytest for stability.  
 
 ---
+---
 
 ## 🚀 Technologies Used
 
@@ -44,15 +45,16 @@ A robust Flask-based web application to efficiently manage product catalogs. Thi
 | Python logging module + custom logger               | Application logging and monitoring |
 
 ---
+---
 
 ## ⚙️ Setup Instructions
 
-1. ### 2. Clone the repository
+### 1. Clone the repository
 
    ```bash
    git clone https://github.com/naviinnn/Catalog_repository-Navin.git
    cd Catalog_repository-Navin
-
+ ```
 
 ### 2. Create & Activate a Virtual Environment (Recommended)
 
