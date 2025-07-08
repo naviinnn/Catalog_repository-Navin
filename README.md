@@ -208,6 +208,7 @@ pytest
 
 - Uses `pytest` fixtures for mocking and isolation.
 - Tests cover both service and authentication logic.
+- During automated tests, logging output is suppressed to keep test results clean and focused on test outcomes. If you want to see logs during tests, disable or remove the logging suppression in conftest.py.
 
 ---
 
