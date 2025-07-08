@@ -11,8 +11,12 @@ def test_get_connection_success(monkeypatch):
                 ('mysql', 'host'): 'localhost',
                 ('mysql', 'user'): 'root',
                 ('mysql', 'password'): 'pass',
-                ('mysql', 'database'): 'test_db'
+                ('mysql', 'database'): 'test_db',
+                ('mysql', 'port'): '3306'
             }[(section, option)]
+        
+        def getint(self, section, option):
+            return int(self.get(section, option))
 
         def read(self, path):
             pass
@@ -39,16 +43,22 @@ def test_get_connection_mysql_error(monkeypatch):
     class DummyConfig:
         def get(self, section, option):
             return 'some_value'
+        
+        def getint(self, section, option):
+            return 3306
 
         def read(self, path):
             pass
 
     monkeypatch.setattr('utils.db_get_connection.ConfigParser', lambda: DummyConfig())
-    monkeypatch.setattr('utils.db_get_connection.mysql.connector.connect', lambda **kwargs: (_ for _ in ()).throw(MySQLError("Connection failed")))
+    monkeypatch.setattr('utils.db_get_connection.mysql.connector.connect', 
+                        lambda **kwargs: (_ for _ in ()).throw(MySQLError("Connection failed")))
 
     with pytest.raises(DatabaseConnectionError) as excinfo:
         get_connection()
-    assert "Connection failed" in str(excinfo.value)
+    assert "Database connection failed" in str(excinfo.value)
+
+
 
 
 def test_get_connection_unexpected_exception(monkeypatch):

@@ -3,11 +3,10 @@ from configparser import ConfigParser
 from exception.catalog_exception import DatabaseConnectionError
 from utils.logger import logger
 import os
-
 def get_connection() -> mysql.connector.connection.MySQLConnection:
     """
     Establishes and returns a connection to the MySQL database.
-    Logs the process and raises FileNotFoundError or DatabaseConnectionError on failure.
+    Logs the process and raises DatabaseConnectionError on failure.
     """
     try:
         config_path = os.path.join(
@@ -18,7 +17,8 @@ def get_connection() -> mysql.connector.connection.MySQLConnection:
 
         if not os.path.exists(config_path):
             logger.critical(f"Configuration file not found: {config_path}")
-            raise FileNotFoundError(f"Configuration file not found at: {config_path}")
+            # Raise your custom exception instead of FileNotFoundError
+            raise DatabaseConnectionError(f"Configuration file not found at: {config_path}")
 
         config = ConfigParser()
         config.read(config_path)
@@ -27,7 +27,8 @@ def get_connection() -> mysql.connector.connection.MySQLConnection:
             host=config.get('mysql', 'host'),
             user=config.get('mysql', 'user'),
             password=config.get('mysql', 'password'),
-            database=config.get('mysql', 'database')
+            database=config.get('mysql', 'database'),
+            port=config.getint('mysql', 'port')  # Include port as int
         )
         logger.info("Successfully connected to the MySQL database.")
         return connection

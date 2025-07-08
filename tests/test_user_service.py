@@ -4,13 +4,24 @@ from service.user_service import UserService
 from dto.user import User
 from exception.catalog_exception import DataNotFoundError, DatabaseConnectionError
 
+import bcrypt
+import pytest
+from unittest.mock import patch
+from service.user_service import UserService
+from dto.user import User
+from exception.catalog_exception import DataNotFoundError
+
+# Generate bcrypt hash for the password "TestPassword123!"
+sample_password = "TestPassword123!"
+hashed_password = bcrypt.hashpw(sample_password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+
 @pytest.fixture
 def sample_user_dict():
     return {
         'user_id': 1,
         'username': 'navin',
         'email': 'navin@example.com',
-        'password_hash': 'hashed_password',
+        'password_hash': hashed_password,
         'created_at': '2025-07-07 10:00:00'
     }
 
@@ -20,7 +31,7 @@ def sample_user():
         user_id=1,
         username='navin',
         email='navin@example.com',
-        password_hash='hashed_password',
+        password_hash=hashed_password,
         created_at='2025-07-07 10:00:00'
     )
 
