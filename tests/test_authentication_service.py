@@ -1,3 +1,10 @@
+"""
+Tests for AuthenticationService using pytest.
+
+Covers password hashing, password verification,
+user authentication, and error handling scenarios.
+"""
+
 import pytest
 import bcrypt
 from unittest.mock import MagicMock
@@ -6,6 +13,12 @@ from dto.user import User
 from exception.catalog_exception import ValidationError, AuthenticationError, DatabaseConnectionError
 
 class TestAuthenticationService:
+    """
+    Pytest test class for AuthenticationService methods.
+
+    Covers password hashing, password checking, user authentication,
+    and error handling for invalid inputs and database issues.
+    """
 
     def setup_method(self):
         self.auth_service = AuthenticationService()

@@ -1,8 +1,23 @@
+"""
+Tests for Catalog API endpoints using pytest.
+
+Covers authentication, catalog CRUD operations, and logout,
+with handling for CSRF tokens and JWT authentication.
+"""
+
+
 import unittest
 import json
 from app import app
 
 class CatalogAppTestCase(unittest.TestCase):
+    """
+    TestCase class for Catalog API endpoints.
+
+    Includes tests for login, catalog CRUD operations, and logout.
+
+    Other test classes exist but are not documented here.
+    """
 
     def setUp(self):
         self.client = app.test_client()

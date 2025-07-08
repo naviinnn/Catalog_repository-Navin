@@ -1,3 +1,10 @@
+"""
+Pytest tests for Catalog and User DTO classes.
+
+Verifies object creation and dictionary serialization,
+including handling of optional datetime fields.
+"""
+
 from datetime import datetime
 import pytest
 from dto.catalog import Catalog

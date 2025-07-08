@@ -211,3 +211,8 @@ pytest
 
 ---
 
+## 📚 Code Documentation
+
+The entire codebase is well-documented using Python docstrings for modules, classes, and methods. This includes detailed descriptions in the service layers, DTOs, utility functions, and test modules, enhancing code clarity and maintainability for contributors and reviewers.
+
+

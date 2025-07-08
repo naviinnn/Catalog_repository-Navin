@@ -1,3 +1,10 @@
+"""
+Pytest tests for database connection utility.
+
+Tests success, missing config, MySQL errors, and unexpected exceptions
+using monkeypatch to mock dependencies.
+"""
+
 import pytest
 from mysql.connector import Error as MySQLError
 from exception.catalog_exception import DatabaseConnectionError

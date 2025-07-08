@@ -1,4 +1,3 @@
-# routes/catalog_routes.py
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from flasgger.utils import swag_from
@@ -13,6 +12,15 @@ catalog_bp = Blueprint('catalog_bp', __name__, url_prefix='/api/catalogs')
 catalog_service = CatalogService()
 
 def serialize_catalog_for_json(catalog_data: dict) -> dict:
+    """
+    Convert date fields in catalog data to string format for JSON serialization.
+
+    Args:
+        catalog_data (dict): Catalog information with possible date objects.
+
+    Returns:
+        dict: Catalog data with dates formatted as 'YYYY-MM-DD', or None if input is empty.
+    """
     if not catalog_data:
         return None
     serialized_data = catalog_data.copy()
@@ -61,6 +69,14 @@ def serialize_catalog_for_json(catalog_data: dict) -> dict:
     'security': [{'Bearer': []}]
 })
 def add_catalog_api():
+    """
+    Handle API request to add a new catalog.
+
+    Validates input JSON, checks date logic, creates a catalog, and returns success response.
+
+    Returns:
+        Flask Response: JSON message with new catalog ID and HTTP status 201.
+    """
     current_user_id = get_jwt_identity()
     data = request.get_json()
     if not data:
@@ -121,6 +137,17 @@ def add_catalog_api():
     }
 })
 def get_catalog_by_id_api(catalog_id):
+    """
+    Retrieve and return catalog data by ID as JSON response.
+
+    Handles not found, database, and unexpected errors with appropriate HTTP status codes.
+
+    Args:
+        catalog_id (int): ID of the catalog to retrieve.
+
+    Returns:
+        Flask Response: JSON with catalog data or error message.
+    """
     try:
         catalog_data = catalog_service.get_catalog_by_id(catalog_id)
         serialized_catalog = serialize_catalog_for_json(catalog_data)
@@ -203,6 +230,14 @@ def get_catalog_by_id_api(catalog_id):
     }
 })
 def get_all_catalogs_api():
+    """
+    Retrieve paginated catalog list with optional search and status filtering.
+
+    Returns catalog data with pagination info as JSON response.
+
+    Returns:
+        Flask Response: JSON containing catalogs list, total count, and pagination details.
+    """
     search_term = request.args.get('search', '').strip()
     status_filter = request.args.get('status', '').strip().lower()
     page = request.args.get('page', 1, type=int)
@@ -276,6 +311,17 @@ def get_all_catalogs_api():
     'security': [{'Bearer': []}]
 })
 def update_catalog_api(catalog_id):
+    """
+    Update catalog details by ID from JSON request data.
+
+    Validates input, performs update, and returns success or error JSON response.
+
+    Args:
+        catalog_id (int): ID of the catalog to update.
+
+    Returns:
+        Flask Response: JSON message indicating update status.
+    """
     data = request.get_json()
     if not data:
         raise ValidationError("Request must contain valid JSON data.")

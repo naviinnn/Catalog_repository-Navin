@@ -1,3 +1,13 @@
+"""
+Pytest tests for input validation utility functions.
+
+Tests cover:
+- Alphanumeric string validation (content, length, type)
+- Date format and future date validation
+- Status field validation (case-insensitive, allowed values)
+- Appropriate error raising for invalid inputs
+"""
+
 import pytest
 from datetime import date, timedelta
 from utils.validation import (

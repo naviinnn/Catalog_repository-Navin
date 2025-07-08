@@ -1,3 +1,11 @@
+"""
+Pytest tests for CatalogService methods.
+
+Includes tests for creating, retrieving, updating, deleting catalogs,
+and counting catalogs with various scenarios mocked.
+"""
+
+
 import pytest
 from unittest.mock import patch, MagicMock
 from service.catalog_service import CatalogService

@@ -1,3 +1,13 @@
+"""
+Pytest tests for UserService methods.
+
+Includes tests for:
+- Retrieving users by username, email, and ID
+- Creating users
+- Checking user existence by username and email
+- Handling user not found and data exceptions
+"""
+
 import pytest
 from unittest.mock import patch, MagicMock
 from service.user_service import UserService

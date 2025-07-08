@@ -1,4 +1,3 @@
-# routes/auth_routes.py
 from flask import Blueprint, request, jsonify, url_for
 from flask_jwt_extended import create_access_token, jwt_required, unset_jwt_cookies, get_jwt_identity, set_access_cookies
 from flasgger.utils import swag_from
@@ -45,6 +44,14 @@ authentication_service = AuthenticationService()
     }
 })
 def login_api():
+    """
+    Authenticate user with credentials from JSON request and return access token.
+
+    Sets JWT access cookie and returns user data on success.
+
+    Returns:
+        Flask Response: JSON message with user info and access token or error details.
+    """
     data = request.get_json()
     if not data:
         raise ValidationError("Request must contain valid JSON data.")

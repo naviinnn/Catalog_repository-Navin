@@ -1,3 +1,16 @@
+"""
+Logging configuration for the Catalog Manager application.
+
+Sets up a rotating file handler to log debug and higher-level messages
+to a file named 'catalog_manager.log' in the '../logs' directory.
+
+Ensures the log directory exists and prevents duplicate handlers
+and propagation to root loggers.
+
+This module is imported wherever logging is needed in the application.
+"""
+
+
 import logging
 import os
 from logging.handlers import RotatingFileHandler
