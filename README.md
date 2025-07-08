@@ -21,8 +21,6 @@ It provides full **CRUD** (Create, Read, Update, Delete) functionality, secure *
 - [👨‍💻 Usage](#-usage)
 - [📁 Folder Structure](#-folder-structure)
 - [✅ Testing](#-testing)
-- [🤝 Contributing](#-contributing)
-- [🪪 License](#-license)
 
 ---
 
