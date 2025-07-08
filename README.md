@@ -27,24 +27,22 @@ A robust Flask-based web application to efficiently manage product catalogs. Thi
 - 🧪 **Testing Suite:** Automated tests with pytest for stability.  
 
 ---
----
 
 ## 🚀 Technologies Used
 
-| Technology                                          | Purpose                            |
-|---------------------------------------------------- |---------------------------------- -|
-| Python 3.x                                          | Core programming language          |
-| Flask                                               | Web framework                      |
-| MySQL                                               | Database                           |
-| mysql-connector-python                              | MySQL integration                  |
-| Flask-JWT-Extended                                  | JWT-based authentication           |
-| Flasgger                                            | Swagger UI integration             |
-| bcrypt                                              | Password hashing                   |
-| JavaScript Fetch API                                | Frontend HTTP requests             |
-| pytest                                              | Testing framework                  |
-| Python logging module + custom logger               | Application logging and monitoring |
+| Technology                                | Purpose                               |
+|------------------------------------------|-------------------------------------|
+| Python 3.x                              | Core programming language            |
+| Flask                                   | Web framework                       |
+| MySQL                                   | Database                           |
+| mysql-connector-python                  | MySQL integration                    |
+| Flask-JWT-Extended                      | JWT-based authentication             |
+| Flasgger                               | Swagger UI integration               |
+| bcrypt                                 | Password hashing                     |
+| JavaScript Fetch API                    | Frontend HTTP requests               |
+| pytest                                 | Testing framework                    |
+| Python logging module + custom logger  | Application logging and monitoring   |
 
----
 ---
 
 ## ⚙️ Setup Instructions
