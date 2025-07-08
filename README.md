@@ -27,24 +27,22 @@ A robust Flask-based web application to efficiently manage product catalogs. Thi
 - 🧪 **Testing Suite:** Automated tests with pytest for stability.  
 
 ---
----
 
 ## 🚀 Technologies Used
 
-| Technology                                          | Purpose                            |
-|---------------------------------------------------- |---------------------------------- -|
-| Python 3.x                                          | Core programming language          |
-| Flask                                               | Web framework                      |
-| MySQL                                               | Database                           |
-| mysql-connector-python                              | MySQL integration                  |
-| Flask-JWT-Extended                                  | JWT-based authentication           |
-| Flasgger                                            | Swagger UI integration             |
-| bcrypt                                              | Password hashing                   |
-| JavaScript Fetch API                                | Frontend HTTP requests             |
-| pytest                                              | Testing framework                  |
-| Python logging module + custom logger               | Application logging and monitoring |
+| Technology                                | Purpose                               |
+|------------------------------------------|-------------------------------------|
+| Python 3.x                              | Core programming language            |
+| Flask                                   | Web framework                       |
+| MySQL                                   | Database                           |
+| mysql-connector-python                  | MySQL integration                    |
+| Flask-JWT-Extended                      | JWT-based authentication             |
+| Flasgger                               | Swagger UI integration               |
+| bcrypt                                 | Password hashing                     |
+| JavaScript Fetch API                    | Frontend HTTP requests               |
+| pytest                                 | Testing framework                    |
+| Python logging module + custom logger  | Application logging and monitoring   |
 
----
 ---
 
 ## ⚙️ Setup Instructions
@@ -138,17 +136,15 @@ curl -X POST http://127.0.0.1:5000/api/catalog \
   -d '{"name":"Sample Catalog", "description":"For testing"}'
 ```
 
----
-
 ## 📁 Folder Structure
-
+```
 Catalog_Manager - Navin/
 ├── app.py                         # Main Flask application entry point
 ├── config/
 │   └── config.ini                 # Configuration for MySQL and JWT
 ├── dto/
-│   ├── catalog.py                 # Catalog data transfer object (DTO)
-│   ├── user.py                    # User DTO
+│   ├── catalog.py                 # Catalog Data Transfer Object (DTO)
+│   ├── user.py                   # User DTO
 │   └── __init__.py
 ├── exception/
 │   └── catalog_exception.py       # Custom exception classes
@@ -158,8 +154,8 @@ Catalog_Manager - Navin/
 │   ├── auth_routes.py             # Authentication-related routes
 │   ├── catalog_routes.py          # Catalog-related routes
 ├── service/
-│   ├── authentication_service.py # Business logic for authentication
-│   ├── catalog_service.py         # Business logic for catalogs
+│   ├── authentication_service.py # Authentication business logic
+│   ├── catalog_service.py         # Catalog business logic
 │   ├── user_service.py            # User-related business logic
 │   └── __init__.py
 ├── static/
@@ -168,7 +164,7 @@ Catalog_Manager - Navin/
 │   └── js/
 │       └── script.js              # Frontend JavaScript
 ├── swagger/
-│   ├── app.py                    # Swagger-related Flask app config
+│   ├── app.py                    # Swagger Flask app config
 │   └── swagger_config.yml        # Swagger configuration
 ├── templates/
 │   ├── index.html                # Main SPA page
@@ -177,7 +173,7 @@ Catalog_Manager - Navin/
 │   └── 500.html                  # Server error page
 ├── tests/
 │   ├── conftest.py               # Pytest fixtures and setup
-│   ├── test_app.py               # Tests for main app features
+│   ├── test_app.py               # Main app tests
 │   ├── test_authentication_service.py
 │   ├── test_catalog_service.py
 │   ├── test_db_connection.py
@@ -186,17 +182,15 @@ Catalog_Manager - Navin/
 │   ├── test_validation.py
 │   └── __init__.py
 ├── utils/
-│   ├── db_get_connection.py      # DB connection helper
+│   ├── db_get_connection.py      # Database connection helper
 │   ├── logger.py                 # Custom logging configuration
 │   ├── validation.py             # Input validation functions
 │   └── __init__.py
 ├── requirements.txt              # Production dependencies
-├── dev-requirements.txt          # Development and testing dependencies
-├── pytest.ini                   # Pytest config file
-├── README.md                    # Project documentation
-
-
----
+├── dev-requirements.txt          # Development & testing dependencies
+├── pytest.ini                   # Pytest configuration file
+└── README.md                    # Project documentation
+```
 
 ## ✅ Testing
 

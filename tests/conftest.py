@@ -7,9 +7,6 @@ from app import app
 # Ensure app can be imported from the root directory when running tests
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-# Set root logger level to ERROR globally to suppress INFO and DEBUG during tests
-logging.getLogger().setLevel(logging.ERROR)
-
 @pytest.fixture(scope='session')
 def client():
     app.config['TESTING'] = True
@@ -25,6 +22,6 @@ def bypass_jwt_auth(monkeypatch):
 
 @pytest.fixture(autouse=True)
 def disable_logging():
-    logging.disable(logging.CRITICAL)  # Disable all logging calls of CRITICAL and below
+    logging.disable(logging.CRITICAL)  
     yield
-    logging.disable(logging.NOTSET)  # Re-enable logging after test session
+    logging.disable(logging.NOTSET) 
