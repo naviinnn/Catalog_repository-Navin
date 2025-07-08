@@ -1,69 +1,58 @@
-# 📦 Catalog Manager Application
+# Catalog Manager Application
 
-A robust Flask-based web application to efficiently manage product catalogs.  
-It provides full **CRUD** (Create, Read, Update, Delete) functionality, secure **JWT authentication**, interactive **Swagger API documentation**, and more.
-
----
-
-## 📈 Project Status
-
-- ✅ Stable
-- 🐍 Python Version: 3.x
-- ⚖️ License: MIT (or specify if different)
+A robust Flask-based web application to efficiently manage product catalogs. This application provides full CRUD (Create, Read, Update, Delete) functionality, secure JWT authentication, interactive Swagger API documentation, and more.
 
 ---
 
-## 📚 Table of Contents
+## 📋 Table of Contents
 
-- [✨ Features](#-features)
-- [🚀 Technologies Used](#-technologies-used)
-- [⚙️ Setup Instructions](#️-setup-instructions)
-- [👨‍💻 Usage](#-usage)
-- [📁 Folder Structure](#-folder-structure)
-- [✅ Testing](#-testing)
+- [Features](#-features)  
+- [Technologies Used](#-technologies-used)  
+- [Setup Instructions](#-setup-instructions)  
+- [Usage](#-usage)  
+- [Folder Structure](#-folder-structure)  
+- [Testing](#-testing)  
+  
 
 ---
 
 ## ✨ Features
 
-- 📋 **Catalog Management**: Create, read, update, and delete product catalogs.
-- 🔒 **Secure Authentication**: JWT-based user authentication with HTTP-only cookies.
-- 🔍 **Advanced Search**: Pagination, search, and status filtering for catalogs.
-- 📄 **Interactive API Docs**: Explore and test endpoints with Swagger UI.
-- ⚙️ **Robust Error Handling**: Custom error responses for a smoother UX.
-- 📜 **Comprehensive Logging**: Track and debug application activity.
-- 🧪 **Testing Suite**: Automated tests with `pytest`.
+- 📋 **Catalog Management:** Create, read, update, and delete product catalogs.  
+- 🔒 **Secure Authentication:** JWT-based user authentication with HTTP-only cookies.  
+- 🔍 **Advanced Search:** Pagination, search, and status filtering for catalogs.  
+- 🗂️ **Interactive API Docs:** Explore and test API endpoints with Swagger UI.  
+- ⚙️ **Robust Error Handling:** Custom error handling for a smoother user experience.  
+- 📝 **Comprehensive Logging:** Monitor and troubleshoot application activity using custom logging.  
+- 🧪 **Testing Suite:** Automated tests with pytest for stability.  
 
 ---
 
 ## 🚀 Technologies Used
 
-| Technology               | Purpose                      |
-|--------------------------|------------------------------|
-| Python 3.x               | Core programming language    |
-| Flask                    | Web framework                |
-| MySQL                    | Relational database          |
-| mysql-connector-python   | MySQL driver for Python      |
-| Flask-JWT-Extended       | JWT authentication           |
-| Flasgger                 | Swagger API documentation    |
-| bcrypt                   | Password hashing             |
-| JavaScript (Fetch API)   | Frontend API interaction     |
-| pytest                   | Testing framework            |
+| Technology                                          | Purpose                            |
+|---------------------------------------------------- |---------------------------------- -|
+| Python 3.x                                          | Core programming language          |
+| Flask                                               | Web framework                      |
+| MySQL                                               | Database                           |
+| mysql-connector-python                              | MySQL integration                  |
+| Flask-JWT-Extended                                  | JWT-based authentication           |
+| Flasgger                                            | Swagger UI integration             |
+| bcrypt                                              | Password hashing                   |
+| JavaScript Fetch API                                | Frontend HTTP requests             |
+| pytest                                              | Testing framework                  |
+| Python logging module + custom logger               | Application logging and monitoring |
 
 ---
 
 ## ⚙️ Setup Instructions
 
-## ⚙️ Setup Instructions
+1. ### 2. Clone the repository
 
-### 1. Clone the Repository
+   ```bash
+   git clone https://github.com/naviinnn/Catalog_repository-Navin.git
+   cd Catalog_repository-Navin
 
-```bash
-git clone https://github.com/naviinnn/Catalog_repository-Navin.git
-cd Catalog_repository-Navin
-```
-
----
 
 ### 2. Create & Activate a Virtual Environment (Recommended)
 
@@ -151,39 +140,59 @@ curl -X POST http://127.0.0.1:5000/api/catalog \
 
 ## 📁 Folder Structure
 
-```
-Catalog_repository-Navin/
-├── app.py                         # Main Flask entry point
+Catalog_Manager - Navin/
+├── app.py                         # Main Flask application entry point
 ├── config/
-│   └── config.ini                 # DB & JWT config
+│   └── config.ini                 # Configuration for MySQL and JWT
 ├── dto/
-│   ├── catalog.py                 # Catalog DTO
-│   └── user.py                    # User DTO
-├── service/
-│   ├── authentication_service.py  # Auth logic
-│   ├── catalog_service.py         # Catalog logic
-│   └── user_service.py            # User logic
-├── utils/
-│   ├── logger.py                  # Logging
-│   └── validation.py              # Input validation
+│   ├── catalog.py                 # Catalog data transfer object (DTO)
+│   ├── user.py                    # User DTO
+│   └── __init__.py
 ├── exception/
-│   └── catalog_exception.py       # Custom exceptions
+│   └── catalog_exception.py       # Custom exception classes
+├── logs/
+│   └── catalog_manager.log        # Application log file
+├── routes/
+│   ├── auth_routes.py             # Authentication-related routes
+│   ├── catalog_routes.py          # Catalog-related routes
+├── service/
+│   ├── authentication_service.py # Business logic for authentication
+│   ├── catalog_service.py         # Business logic for catalogs
+│   ├── user_service.py            # User-related business logic
+│   └── __init__.py
 ├── static/
 │   ├── css/
-│   ├── js/
-│   └── images/
+│   │   └── style.css              # CSS styles
+│   └── js/
+│       └── script.js              # Frontend JavaScript
+├── swagger/
+│   ├── app.py                    # Swagger-related Flask app config
+│   └── swagger_config.yml        # Swagger configuration
 ├── templates/
-│   ├── index.html                 # Main SPA
-│   ├── login.html                 # Login page
-│   ├── 404.html                   # Not Found
-│   └── 500.html                   # Server Error
+│   ├── index.html                # Main SPA page
+│   ├── login.html                # Login page
+│   ├── 404.html                  # Not found page
+│   └── 500.html                  # Server error page
 ├── tests/
+│   ├── conftest.py               # Pytest fixtures and setup
+│   ├── test_app.py               # Tests for main app features
+│   ├── test_authentication_service.py
 │   ├── test_catalog_service.py
-│   └── test_authentication.py
-├── requirements.txt              # Prod dependencies
-├── dev-requirements.txt          # Dev/test dependencies
-└── README.md
-```
+│   ├── test_db_connection.py
+│   ├── test_dto.py
+│   ├── test_user_service.py
+│   ├── test_validation.py
+│   └── __init__.py
+├── utils/
+│   ├── db_get_connection.py      # DB connection helper
+│   ├── logger.py                 # Custom logging configuration
+│   ├── validation.py             # Input validation functions
+│   └── __init__.py
+├── requirements.txt              # Production dependencies
+├── dev-requirements.txt          # Development and testing dependencies
+├── pytest.ini                   # Pytest config file
+├── README.md                    # Project documentation
+
 
 ---
 
